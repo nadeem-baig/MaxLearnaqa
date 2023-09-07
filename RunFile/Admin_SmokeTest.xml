@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<parameter name="reportname" value="Admin_Smoke" />
+	<test thread-count="5" name="Test">
+		<groups>
+			<run>
+
+				<include name="SmokeTest"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="testCases.LoginTest" />
+
+			<class name="testCases.AddNewCategory" />
+			<class name="testCases.AddNewSubject" />
+			<class name="testCases.addNewTopic" />
+
+
+			<class name="testCases.addNewDeck" />
+			<class name="testCases.AddNewFlashCard" />
+			<class name="testCases.Add_KLP" />
+
+
+			<class name="testCases.Add_SingleChoice" />
+			<class name="testCases.Add_MultiChoice" />
+			<class name="testCases.Add_Put_in_Order_Question" />
+			<class name="testCases.Add_True_False" />
+
+			<class name="testCases.AddLearners" />
+			<class name="testCases.Manage_Squads" />
+			
+			<class name="testCases.Challenges" />
+			<class name="testCases.LearnQuests" />
+			<class name="testCases.Certifications" />
+			<class name="testCases.Add_Goals" />
+		</classes>
+
+
+	</test>
+</suite> 
