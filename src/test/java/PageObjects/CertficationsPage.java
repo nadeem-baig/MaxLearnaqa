@@ -5,11 +5,11 @@ package PageObjects;
 import org.openqa.selenium.By;
 
 public class CertficationsPage {
-	public static By CreateCert_Main = By.xpath("//SPAN[@class='clr_tobrand'][text()='Create Cert']");
+	public static By CreateCert_Main = By.xpath("(//button[@type='button'])[1]");
 
 	// Create Page
 	public static By CertName = By.xpath("//input[@placeholder='Type the cert name']");
-	public static By CertDescription = By.xpath("//textarea[@placeholder='Type the cert description here']");
+	public static By CertDescription = By.xpath("//textarea[@placeholder='Type the certification description here']");
 	public static By PreviewQuestions = By.xpath("//button[@class=add-new-btn create_btn btn btn-secondary]");
 	public static By PreviewQuestions_close = By.xpath("//SPAN[@aria-hidden='true'][text()='×']");
 	public static By Search_Topic = By.xpath("//textarea[@placeholder='Search']");
@@ -23,7 +23,7 @@ public class CertficationsPage {
 			"div:nth-child(2) > div > div > div.select__indicators > div.select__indicator.select__clear-indicator.css-tlfecz-indicatorContainer > svg");
 	public static By Cancel_submit = By.xpath("//a[@href='/data-list/challengs'][text()='Cancel']");
 	// Cert content check boxes
-	public static By checkbox1 = By.id("638735997f7717b0719a1d35");
+	public static By checkbox1 = By.id("654064daadcc54df173f3a60");
 	public static By learninglevel = By.xpath("//div[@class=' css-1wa3eu0-placeholder'][text()='Select Level']");
 	public static By PickQuestions = By.xpath("//button[@type='button'][text()='Pick Questions']");
 	public static By selectQuestion1 = By
@@ -56,7 +56,7 @@ public class CertficationsPage {
 			.cssSelector("li:nth-child(2) > div.text-center > input[type=\"checkbox\"]");
 	public static By ConfirmSelection = By.xpath("//button[text()='Confirm Selection']");
 
-	public static By Createcert = By.xpath("//button[@type='submit'][text()='Create Cert']");
+	public static By Createcert = By.xpath("//button[text()='Create Certification']");
 
 	public static By Cert_Error = By.xpath("//p[@class='err_klkk'][text()='Please enter Cert Name']");
 	public static By Description_error = By.xpath("//p[@class='err_klkk'][text()='Please enter Cert  Description ']");
@@ -74,7 +74,7 @@ public class CertficationsPage {
 	public static By Delete_cancel = By.xpath("//button[@class='swal-button swal-button--cancel'][text()='Cancel']");
 
 	
-	public static By update = By.xpath("//button[normalize-space()='Edit Cert']");
+	public static By update = By.xpath("//button[text()='Edit Certification']");
 
 	// listing Page
 	public static By Search_Cert = By.xpath("//input[@placeholder='Search']");
@@ -91,4 +91,6 @@ public class CertficationsPage {
 	// drft_clr']");
 	public static By status_dropdown = By.xpath("//div[@class='status-select']");
 	public static By Draft_status = By.xpath("//option[text() ='Draft']");
+	public static By Toggle = By.xpath("(//button[@type='button'])[3]");
+	public static By status = By.xpath("(//SELECT[@name='status'])[1]");
 }

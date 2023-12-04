@@ -2,11 +2,11 @@ package PageObjects;
 import org.openqa.selenium.By;
 public class LearnQuests_Page {
 
-	public static By createnewQuest = By.xpath("//span[normalize-space()='Create New Quest']");
+	public static By createnewQuest = By.xpath("//span[@class='align-middle add_clr'][text()='CREATE NEW LEARNING PATH']");
 
 	//Create Page
     public static By createQuest = By.cssSelector(".btn.btn-add-new-btn.add_btnct1.ml-1");
-	public static By LearnQuestName = By.xpath("//INPUT[@placeholder='Type the quest name']");
+	public static By LearnQuestName = By.xpath("//input[@placeholder='Type the learning path name']");
 	public static By QuestDescription = By.xpath("//DIV[@class='fr-element fr-view fr-element-scroll-visible']");
 	public static By TimedQuest = By.xpath("//SPAN[@class='ant-switch-inner'][text()='Off']");
 	public static By PeriodofperformanceFromDate = By.xpath("(//INPUT[@type='text'])[2]");
@@ -41,13 +41,16 @@ public class LearnQuests_Page {
 	public static By Notification_Tab = By.xpath("//p[text()='Notifications']");
 	public static By Publish_status = By.xpath("//span[@class='ml-1 d-inline publ_clr']");
 	public static By Draft_status = By.xpath("//span[@class='ml-1 d-inline drft_clr']");
+	public static By Toggle = By.xpath("(//button[@type='button'])[2]");
+	public static By status = By.xpath("(//SELECT[@name='publish'])[1]");
+	
 
 	// Edit and Delete
 	public static By CTA_Button = By.xpath("//div[@id='row-0']//*[name()='circle']");
 	public static By Delete_Button = By.xpath("//button[normalize-space()='Delete']");
 	public static By Delete_Yes = By.xpath("//button[@class='swal-button swal-button--confirm swal-button--danger'][text()='OK']");
 	public static By Delete_cancel = By.xpath("//button[@class='swal-button swal-button--cancel'][text()='Cancel']");
-	public static By Update = By.xpath("//button[descendant::text()='Save Quest']");
+	public static By Update = By.xpath("//button[@type='button'][text()='Save Learning Path']");
 	public static By delete_toast = By.xpath("//div[@class='Toastify__toast-body']//span");
 	public static By member_count = By.xpath("//div[@class='sc-dKfzgJ bCwQdW rdt_TableBody']");
 }

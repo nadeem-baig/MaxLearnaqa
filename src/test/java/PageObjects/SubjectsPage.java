@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class SubjectsPage {
 
-	public static By Add_New_Subject = By.xpath("//span[normalize-space()='Add New Subject']");
+	public static By Add_New_Subject = By.xpath("//span[text()='ADD NEW SUBJECT']");
 	public static By Subject_Title = By.xpath("//input[@placeholder='Enter Subject Title']");
 	public static By sub_upload = By.xpath("//*[@id=\"root\"]/div/div[3]/div[3]/div/div[5]/div[3]/button[2]/span/span");
 	public static By File = By.id("file-input");
@@ -28,9 +28,11 @@ public class SubjectsPage {
 
 	public static By View_Row = By.id("row-0");
 	public static By Add_Topics = By.xpath("//span[normalize-space()='ADD NEW TOPIC']");
-	public static By CTA_Button = By.xpath("(//button[@type='button'])[5]");
-	public static By Delete_Button = By.xpath("(//button[@type='button'])[7]");
+	public static By CTA_Button = By.xpath("(//button[@type='button'])[2]");
+	public static By Delete_Button = By.xpath("(//button[@type='button'])[4]");
 	public static By Delete_Yes = By.xpath("//button[@class='swal-button swal-button--confirm swal-button--danger'][text()='OK']");
 	public static By Delete_cancel = By.xpath("//button[@class='swal-button swal-button--cancel'][text()='Cancel']");
+	public static By status = By.xpath("(//select[@name='status'])[1]");
+
 
 }

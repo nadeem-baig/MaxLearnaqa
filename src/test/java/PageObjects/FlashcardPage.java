@@ -26,10 +26,12 @@ public class FlashcardPage {
 	    public static By Flashcard_preview_close=By.xpath("//h5[@class='modal-title']");
 
 
-	    public static By CTA_Button = By.xpath("(//button[@type='button'])[3]");
-		public static By Delete_Button = By.xpath("(//button[@role='menuitem'][normalize-space()='Delete'])[1]");
+	    public static By CTA_Button = By.xpath("(//button[@type='button'])[4]");
+		public static By Delete_Button = By.xpath("(//button[@type='button'])[6]");
 		public static By Delete_Yes = By.xpath("//button[@class='swal-button swal-button--confirm swal-button--danger'][text()='OK']");
 		public static By Delete_cancel = By.xpath("//button[@class='swal-button swal-button--cancel'][text()='Cancel']");
+		public static By status = By.xpath("(//select[@name='status'])[1]");
+
 
 
 }

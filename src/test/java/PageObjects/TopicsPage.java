@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class TopicsPage {
 	public static By Topics_Nav_Menu = By.xpath("//span[contains(text(),'Topics')]");
-	public static By Add_New_topic = By.xpath("//span[normalize-space()='ADD NEW TOPIC']");
+	public static By Add_New_topic = By.xpath("//span[text()='ADD NEW TOPIC']");
 	public static By Topic_Title = By.name("title");
 	public static By Category_dropdown = By.xpath("//div[contains(text(),'Pick a category')]");
 	public static By Subject_dropdown = By.xpath("//div[contains(text(),'Pick a subject')]");
@@ -28,4 +28,6 @@ public class TopicsPage {
 	public static By Delete_Button = By.xpath("(//button[@type='button'])[7]");
 	public static By Delete_Yes = By.xpath("//button[@class='swal-button swal-button--confirm swal-button--danger'][text()='OK']");
 	public static By Delete_cancel = By.xpath("//button[@class='swal-button swal-button--cancel'][text()='Cancel']");
+	public static By status = By.xpath("(//select[@name='status'])[1]");
+
 }

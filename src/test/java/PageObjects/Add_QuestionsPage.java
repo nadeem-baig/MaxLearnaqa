@@ -5,8 +5,8 @@ import org.openqa.selenium.By;
 public class Add_QuestionsPage {
 	
 	
-    public static By Add_New_Question =By.xpath("//span[contains(text(),'Add New Questions')]");
-    public static By Single_Choice =By.xpath("//span[contains(text(),'Single Choice Questions')]");
+    public static By Add_New_Question =By.xpath("//span[@class='align-middle add_clr ml-ques-btn'][text()='ADD NEW QUESTIONS']");
+    public static By Single_Choice =By.xpath("//span[@class='align-middle'][text()='Single Choice Questions']");
     
     public static By Question_Content =By.xpath("//div[@class='fr-element fr-view']//p");
     public static By Option_1 =By.xpath("(//textarea[@name='text'])[1]");
@@ -27,6 +27,8 @@ public class Add_QuestionsPage {
 	public static By Status_text =By.xpath("(//select[@name='status'])[1]");
 	public static By Preview_close =By.xpath("(//button[@aria-label='Close']");
 	public static By Preview_text =By.xpath("//div[@class='inside-secd']");
+	public static By Save_as_draft =By.xpath("//span[contains(text(),'Save as Draft')]");
+
 
 	public static By Answer_error =By.xpath("//p[@class='err_klkk'][text()='Please Select an Answer']");
 	public static By feedback_error =By.xpath("//p[@class='err_klkk'][text()='Please enter feedback']");
@@ -61,6 +63,12 @@ public class Add_QuestionsPage {
 	public static By option_Error =By.xpath("//p[@class='err_klkk'][text()='Please enter option']");
     public static By Option_3 =By.xpath("(//textarea[@name='text'])[3]");
     public static By checkbox1 =By.xpath("//label[@for='custom-checkbox-1']");
+	public static By status = By.xpath("(//SELECT[@name='status'])[1]");
+	
+	
+	public static By Excel_Uplaod = By.xpath("//label[@for='file-input']//img[@class='excel_catgf ex_flt']");
+	public static By file = By.id("file-input");
+
 
 
 

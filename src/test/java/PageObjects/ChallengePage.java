@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class ChallengePage 
 
 {
-	public static By CreateChallenge_Main = By.xpath("//SPAN[@class='align-middle add_clr'][text()='Create Challenge']");
+	public static By CreateChallenge_Main = By.xpath("//span[@class='align-middle add_clr'][text()='CREATE CHALLENGE']");
 	//Create Page
 	public static By ChallengeName = By.xpath("//input[@placeholder='Type the challenge name']"); 
 	public static By ChallengeDescription =  By.xpath("//textarea[@placeholder='Type the challenge description here']"); 
@@ -31,20 +31,25 @@ public class ChallengePage
 	public static By Answer_Explanation = By.xpath("(//div[@class='ant-switch-handle'])[2]");
 	public static By IndividualLearners = By.xpath("//input[@type='radio'])[text()='Individual Learners']");
 	public static By Type_Squads = By.xpath("(//input[@type='radio'])[2]");    //squad radio button
-	public static By PickSquads = By.xpath("//button[@type='button'][text()='Pick Squads']");   //pick squad button
-	public static By Squad_option1 = By.xpath("(//*[contains(text(), 'Squads')]/ancestor-or-self::*/descendant::*/INPUT[@type='checkbox' and contains(@class, 'ant-checkbox-input')])[11]");
-	public static By  Squad_option2 = By.cssSelector("li:nth-child(4) > div > div:nth-child(1) > label > span > input");
-	public static By Squad_option3 = By.cssSelector("li:nth-child(2) > div > div:nth-child(1) > label > span > input");
+	public static By PickSquads = By.xpath("//button[@type='button'][text()='Pick Teams']");   //pick squad button
+	public static By Squad_option1 = By.xpath("(//*[contains(text(), 'Teams')]/ancestor-or-self::*/descendant::*/INPUT[@type='checkbox' and contains(@class, 'ant-checkbox-input')])[11]");
+	public static By  Squad_option2 = By.xpath("(//*[contains(text(), 'Teams')]/ancestor-or-self::*/descendant::*/INPUT[@type='checkbox' and contains(@class, 'ant-checkbox-input')])[10]");
+	public static By Squad_option3 = By.xpath("(//*[contains(text(), 'Teams')]/ancestor-or-self::*/descendant::*/INPUT[@type='checkbox' and contains(@class, 'ant-checkbox-input')])[9]");
 	public static By PickLearners = By.xpath("//button[@type='button'][text()='Pick Learners']");
-	public static By Individual_option1=By.cssSelector("tr:nth-child(1) > td.check > label > span > input");
-	public static By Individual_option2 = By.cssSelector("tr:nth-child(2) > td.check > label > span > input");
+	public static By Individual_option1=By.xpath("(//INPUT[@type='checkbox'])[6]");
+	public static By Individual_option2 = By.xpath("(//INPUT[@type='checkbox'])[7]");
 	public static By ConfirmSelection = By.xpath("//button[@type='button'][text()='Confirm Selection']");
 	public static By CreateChallenge_submit = By.xpath("//button[@type='submit'][text()='Create Challenge']");
 	public static By Cancel_Squad = By.xpath("//button[@type='button'][text()='Cancel']");
-	public static By Cancel_submit = By.xpath("//a[@href='/data-list/challengs'][text()='Cancel']");
-	public static By squad_count = By.xpath("//div//div[text()='ASSIGNED SQUADS(']");
-	public static By Learners_count = By.xpath("//div[text()='ASSIGNED LEARNERS(']");
-
+	public static By Cancel_submit = By.xpath("//a[@href='/data-list/challenges'][text()='Cancel']");
+	public static By squad_count = By.xpath("//div//div[text()='ASSIGNED TEAMS']");
+	public static By Learners_count = By.xpath("//div//div[text()='ASSIGNED LEARNERS']");
+	
+	public static By Parameter = By.xpath("//select[preceding-sibling::*[descendant::text()='Parameter']]");
+	public static By criteria = By.xpath("//select[preceding-sibling::*[descendant::text()='Criteria']]");
+	public static By Value = By.xpath("//input[@placeholder='Search Value']");
+	public static By Ruleset_add = By.xpath("//span[@class='add_Cls'][text()='Add']");
+	
 	public static By chars =By.id("charNum");
 	public static By Challenge_Error = By.xpath("//p[@class='err_klkk'][text()='Please Enter Challenge Name']");
 	public static By Description_error = By.xpath("//p[@class='err_klkk'][text()='Please Enter Challenge Description ']");
@@ -61,18 +66,27 @@ public class ChallengePage
 	public static By Details_Tab = By.xpath("//div[text()='Details']");
 	public static By participants_Tab = By.xpath("//div[text()='Participants']");
 	public static By Notification_Tab = By.xpath("//div[text()='Notifications']");
-	public static By Publish_status = By.xpath("//span[@class='ml-1 d-inline publ_clr']");
-	public static By Draft_status = By.xpath("//span[@class='ml-1 d-inline drft_clr']");
+	public static By Publish_status = By.cssSelector("div:nth-child(5) > span");
+	public static By Draft_status = By.cssSelector("div:nth-child(5) > span");
 	
 	public static By Challenge_Text = By.xpath("//div[@class='mt-1 detail_font-size']");
 	public static By Add_Learner = By.xpath("(//button[@type='button'])[3]");
 	//Edit and Delete
 	 public static By CTA_Button = By.xpath("//div[@id='row-0']//*[name()='circle']");
+	 public static By CTA_Button1 = By.xpath("//button[following-sibling::*[descendant::text()='Edit']]");
+
 	 public static By Delete_Button = By.xpath("//button[normalize-space()='Delete']");
 	 public static By Delete_Yes = By.xpath("//button[@class='swal-button swal-button--confirm swal-button--danger'][text()='OK']");
 	 public static By Delete_cancel = By.xpath("//button[@class='swal-button swal-button--cancel'][text()='Cancel']");
 	 public static By Update =By.xpath("//button[@type='submit'][text()='Update Challenge']");
 	 public static By delete_toast = By.xpath("//div[@class='Toastify__toast-body']//span");
 	 public static By member_count = By.xpath("//div[@class='sc-dKfzgJ bCwQdW rdt_TableBody']");
+	public static By status = By.xpath("(//button[@type='button'])[4]");
+	public static By status1 = By.xpath("(//select[@name='status'])[2]");
+	public static By toggle = By.xpath("(//button[@type='button'])[1]");
+
+	
+
+
 
 }

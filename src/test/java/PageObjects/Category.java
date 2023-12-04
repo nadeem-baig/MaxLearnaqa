@@ -25,16 +25,17 @@ public class Category {
 	
 	
     public static By View_Row =By.id("row-0");
-    public static By Add_Subjects = By.xpath("//span[contains(text(),'Add New Subject')]");
+    public static By Add_Subjects = By.xpath("//span[text()='ADD NEW SUBJECT']");
     
     public static By File =By.id("file-input");
     public static By chars =By.id("charNum");
 
-    public static By CTA_Button = By.xpath("(//button[@type='button'])[5]");
+    public static By CTA_Button = By.xpath("(//button[@type='button'])[2]");
     
-	public static By Delete_Button = By.xpath("(//button[@role='menuitem'][normalize-space()='Delete'])[1]");
+	public static By Delete_Button = By.xpath("//button[text()='Delete']");
 	public static By Delete_Yes = By.xpath("//button[@class='swal-button swal-button--confirm swal-button--danger'][text()='OK']");
 	public static By Delete_cancel = By.xpath("//button[@class='swal-button swal-button--cancel'][text()='Cancel']");
+	public static By status = By.xpath("(//select[@name='status'])[1]");
 
 	
 }
