@@ -82,7 +82,7 @@ public class SuperAdmin_AddCompany extends BaseClass {
 		Thread.sleep(1000);
 	}
 
-	// navigate to add company page with invalid comapanyname
+	// navigate to add company page with invalid company name
 	@Test(priority = 3, groups = { "Regression" })
 	public void Add_company_inValid_name() throws Exception {
 		logger = extent.createTest("add invalid company name* ", "add new company invalid company name ");
@@ -139,7 +139,7 @@ public class SuperAdmin_AddCompany extends BaseClass {
 		}
 		Thread.sleep(1000);
 	}
-	// navigate to add company page with invalid comapanywebsitelink
+	// navigate to add company page with invalid company website link
 
 	@Test(priority = 5, groups = { "Regression" })
 	public void Add_company_inValid_website() throws Exception {

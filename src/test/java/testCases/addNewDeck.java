@@ -347,9 +347,37 @@ public class addNewDeck extends BaseClass {
 		System.out.println("clicked on cancel button");
 
 	}
+	@Test(priority = 11, groups = { "Regression" })
+	public void add_new_Deck_Status() throws Exception {
+		logger = extent.createTest("Add Deck Status Change",
+				"Changing the status");
+		logger.log(Status.INFO, "add new Deck Status");
+		
+		WebElement status = driver.findElement(DecksPage.status);
+		status.click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster---"+toaster);
+		
+		Thread.sleep(3000);
+		
+		WebElement status1 = driver.findElement(DecksPage.status);
+		status1.click();
+		Actions keyDown1 = new Actions(driver);
+		keyDown1.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		String Message1 = driver.findElement(DecksPage.status).getText();
+
+		System.out.println("Status is ---"+Message1);
+
+
+
+	}
 
 	// Delete Deck clicking on Yes
-	@Test(priority = 11, groups = { "Delete" })
+	@Test(priority = 12, groups = { "Delete" })
 	public void Delete_Deck_Yes() throws Exception {
 		logger = extent.createTest("Delete Deck - yes", "Deck Delete Yes");
 		logger.log(Status.INFO, "Delete Deck yes");
@@ -389,6 +417,7 @@ public class addNewDeck extends BaseClass {
 
 	// add new button click method used as callback
 	public void Click_Add_New_Deck() throws InterruptedException {
+		Thread.sleep(2000);
 		driver.get(config.deck());
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));

@@ -41,7 +41,7 @@ public class Manage_Squads extends BaseClass {
 			logger.info("Error:" + alert);
 
 			System.out.println("Message - " + alert);
-			Assert.assertEquals(alert, "Squad Name Required");
+			Assert.assertEquals(alert, "Team Name Required");
 		} catch (Exception e) {
 			logger.info(e);
 		}
@@ -84,7 +84,7 @@ public class Manage_Squads extends BaseClass {
 				logger.log(Status.INFO, toaster);
 				System.out.println("Message" + toaster);
 				Thread.sleep(2000);
-			} else if (toaster.contains("Select Squad Members")) {
+			} else if (toaster.contains("Select Team Members")) {
 				logger.log(Status.INFO, toaster);
 				System.out.println("Message" + toaster);
 				Thread.sleep(2000);
@@ -101,13 +101,15 @@ public class Manage_Squads extends BaseClass {
 	public void Add_Squad_Image_required() throws InterruptedException, Exception {
 		logger = extent.createTest("Squad Image*", "add new squad Image required ");
 		logger.log(Status.INFO, "Add new squad Image Required");
+		
+		
+		Click_Add_New_Squad();
 
-		driver.findElement(Manage_Squads_Page.squad_image).click();
-		Thread.sleep(3000);
-
-		WebElement Cancel = driver.findElement(Manage_Squads_Page.Upload_Cancel);
-		Cancel.click();
-		Thread.sleep(3000);
+		WebElement SquadName = driver.findElement(Manage_Squads_Page.squad_Name);
+		SquadName.sendKeys("Squad " + Wrapper.randomeString(5));
+		System.out.println("Squad Name is entered");
+		Thread.sleep(2000);	
+		
 		WebElement Parameter = driver.findElement(Manage_Squads_Page.Parameter);
 		Parameter.click();
 		Thread.sleep(2000);
@@ -126,7 +128,7 @@ public class Manage_Squads extends BaseClass {
 
 		WebElement Value = driver.findElement(Manage_Squads_Page.Value);
 		Value.click();
-		Value.sendKeys("IT");
+		Value.sendKeys("testing");
 		Thread.sleep(2000);
 		System.out.println("Value is enterd");
 
@@ -151,7 +153,7 @@ public class Manage_Squads extends BaseClass {
 				logger.log(Status.INFO, toaster);
 				System.out.println("Message -" + toaster);
 				Thread.sleep(2000);
-			} else if (toaster.contains("Select Squad Members")) {
+			} else if (toaster.contains("Select Team Members")) {
 				logger.log(Status.INFO, toaster);
 				System.out.println("Message" + toaster);
 				Thread.sleep(2000);
@@ -329,7 +331,7 @@ public class Manage_Squads extends BaseClass {
 
 			titleerror.isDisplayed();
 			String toaster = driver.findElement(ToasterObject.toaster).getText();
-			if (toaster.contains("Select Squad Members")) {
+			if (toaster.contains("Select Team Members")) {
 				logger.log(Status.INFO, toaster);
 				System.out.println("Message" + toaster);
 				Thread.sleep(2000);
@@ -506,15 +508,15 @@ public class Manage_Squads extends BaseClass {
 		System.out.println("Text - " + Message);
 		logger.log(Status.INFO, Message);
 
-		WebElement squadTab = wait.until(ExpectedConditions.elementToBeClickable(Manage_Squads_Page.squad_Tab));
+		WebElement squadTab = driver.findElement(Manage_Squads_Page.squad_Tab);
 		squadTab.isDisplayed();
 		String Message1 = squadTab.getText();
 		System.out.println("Text - " + Message1);
 		logger.log(Status.INFO, Message1);
 
-		WebElement ChallengesTab = wait
-				.until(ExpectedConditions.elementToBeClickable(Manage_Squads_Page.Challenges_Tab));
+		WebElement ChallengesTab = driver.findElement(Manage_Squads_Page.Challenges_Tab);
 		ChallengesTab.isDisplayed();
+		ChallengesTab.click();
 		String Message2 = ChallengesTab.getText();
 		System.out.println("Text   - " + Message2);
 		logger.log(Status.INFO, Message2);
@@ -534,7 +536,7 @@ public class Manage_Squads extends BaseClass {
 		// capture details
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
 
-		WebElement squadTab = wait.until(ExpectedConditions.elementToBeClickable(Manage_Squads_Page.squad_Tab));
+		WebElement squadTab = driver.findElement(Manage_Squads_Page.squad_Tab);
 		squadTab.isDisplayed();
 		String Message1 = squadTab.getText();
 		System.out.println("Text -" + Message1);

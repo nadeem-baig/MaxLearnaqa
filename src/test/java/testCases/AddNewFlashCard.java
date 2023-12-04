@@ -301,7 +301,7 @@ public class AddNewFlashCard extends BaseClass {
 	}
 
 	// Edit Flash card
-	@Test(priority = 9, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 10, groups = { "Regression", "SmokeTest" })
 	public void Edit_Flashcard() throws Exception {
 		logger = extent.createTest("Edit Flashcard", "Edit Flashcard");
 		logger.log(Status.INFO, "Edit Flashcard description");
@@ -349,14 +349,15 @@ public class AddNewFlashCard extends BaseClass {
 	}
 
 	// Delete Flash card clicking on cancel
-	@Test(priority = 10, groups = { "Regression","SmokeTest" })
+	@Test(priority = 9, groups = { "Regression","SmokeTest" })
 	public void Delete_Flashcard_Cancel() throws Exception {
 		logger = extent.createTest("Delete Flashcard No", "Delete Flashcard Cancel");
-		logger.log(Status.INFO, "Flashcard Delete Cancel");
-		
+		logger.log(Status.INFO, "Flashcard Delete Cancel");		
 		Thread.sleep(3000);
 		WebElement CTA = driver.findElement(FlashcardPage.CTA_Button);
 		CTA.click();
+		Thread.sleep(2000);
+		
 		driver.findElement(FlashcardPage.Delete_Button).click();
 		Thread.sleep(2000);
 		WebElement Cancel = driver.findElement(FlashcardPage.Delete_cancel);
@@ -365,9 +366,36 @@ public class AddNewFlashCard extends BaseClass {
 		System.out.println("clicked on cancel button");
 
 	}
+	@Test(priority = 11, groups = { "Regression" })
+	public void add_new_Flashcard_Status() throws Exception {
+		logger = extent.createTest("Add Flashcard Status Change",
+				"Changing the status");
+		logger.log(Status.INFO, "add new Flashcard Status");
+		driver.get(config.flashcards());
+		Thread.sleep(3000);
+		WebElement status = driver.findElement(FlashcardPage.status);
+		status.click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster---"+toaster);
+		
+		Thread.sleep(3000);
+		
+		WebElement status1 = driver.findElement(FlashcardPage.status);
+		status1.click();
+		Actions keyDown1 = new Actions(driver);
+		keyDown1.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		
+
+
+
+	}
 
 	// Delete Flash card clicking on Yes
-	@Test(priority = 11, groups = { "Delete" })
+	@Test(priority = 12, groups = { "Delete" })
 	public void Delete_Flashcard_Yes() throws Exception {
 		logger = extent.createTest("Delete Flashcard yes", "Delete Yes");
 		logger.log(Status.INFO, "Delete Flashcard");
@@ -406,7 +434,7 @@ public class AddNewFlashCard extends BaseClass {
 	}
 
 	// add new button click method used as callback
-	public void Click_Add_New_Flashcard() {
+	public void Click_Add_New_Flashcard() throws Exception {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
 

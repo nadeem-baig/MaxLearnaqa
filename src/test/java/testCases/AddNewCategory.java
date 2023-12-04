@@ -96,6 +96,11 @@ public class AddNewCategory extends BaseClass {
 		Thread.sleep(2000);
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 150).release(element).build().perform();
+		Thread.sleep(2000);
+		
 		
 		driver.findElement(Category.cardColor).click();
 		Thread.sleep(1000);
@@ -196,6 +201,10 @@ public class AddNewCategory extends BaseClass {
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
 		//driver.findElement(Category.category_Description).click();
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 150).release(element).build().perform();
+		Thread.sleep(2000);
 
 		driver.findElement(Category.category_Description).sendKeys(excel.getDataSheetName("ManageContent", 2, 1));
 		System.out.println("Description filled");
@@ -229,6 +238,7 @@ public class AddNewCategory extends BaseClass {
 			logger.log(Status.ERROR, e);
 		}
 	}
+	
 
 	// description count assert
 	@Test(priority = 7, groups = { "Regression" })
@@ -303,7 +313,7 @@ public class AddNewCategory extends BaseClass {
 		logger = extent.createTest("View category ", "view category details");
 		logger.log(Status.INFO, "View category");
 		driver.get(config.category());
-
+		Thread.sleep(2000);
 		WebElement view_category = driver.findElement(Category.View_Row);
 		view_category.click();
 
@@ -363,7 +373,7 @@ public class AddNewCategory extends BaseClass {
 			logger.log(Status.ERROR, e);
 		}
 
-	}
+		}
 
 	// Delete category clicking on cancel
 	@Test(priority = 11, groups = { "Regression" })
@@ -422,6 +432,28 @@ public class AddNewCategory extends BaseClass {
 			System.out.println(e);
 			logger.log(Status.ERROR, e);
 		}
+	}
+	@Test(priority = 13, groups = { "Regression" })
+	public void add_new_Category_Status() throws Exception {
+		logger = extent.createTest("Add Category Status Change",
+				"Changing the status");
+		logger.log(Status.INFO, "add new category Status");
+		
+		WebElement status = driver.findElement(Category.status);
+		status.click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster"+toaster);
+		WebElement status1 = driver.findElement(Category.status);
+		status1.click();
+		Actions keyDown1 = new Actions(driver);
+		keyDown1.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+
+
+
 	}
 
 	// add new button click method used as callback

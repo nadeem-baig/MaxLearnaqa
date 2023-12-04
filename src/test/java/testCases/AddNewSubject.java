@@ -7,7 +7,6 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -19,7 +18,6 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 
-import PageObjects.Category;
 import PageObjects.SubjectsPage;
 import PageObjects.ToasterObject;
 import utility.Wrapper;
@@ -101,6 +99,13 @@ public class AddNewSubject extends BaseClass {
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
 		
+		WebElement category = driver.findElement(SubjectsPage.Category_Dropdown);
+		category.click();
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+		Thread.sleep(2000);
+		
 		driver.findElement(SubjectsPage.Subject_save).click();
 
 		try {
@@ -157,9 +162,7 @@ public class AddNewSubject extends BaseClass {
 		Wrapper.scrollDown(driver);
 		driver.findElement(SubjectsPage.Subject_save).click();
 		Thread.sleep(2000);
-		Actions dragger = new Actions(driver);
-		WebElement element = driver.findElement(ToasterObject.innerscroll);
-		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+		
 
 		try {
 			WebElement titleerror = driver.findElement(SubjectsPage.errormessage);
@@ -229,6 +232,11 @@ public class AddNewSubject extends BaseClass {
 		Thread.sleep(2000);
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+
+		
 		WebElement Deccription = driver.findElement(SubjectsPage.description);
 		Deccription.click();	
 		Deccription.sendKeys(excel.getDataSheetName("ManageContent", 4, 1));
@@ -402,6 +410,8 @@ public class AddNewSubject extends BaseClass {
 		}
 
 	}
+	
+	
 
 	// Delete Subject clicking on cancel
 	@Test(priority = 11, groups = { "Regression" })
@@ -420,9 +430,32 @@ public class AddNewSubject extends BaseClass {
 		System.out.println("clicked on cancel button");
 
 	}
+	@Test(priority = 12, groups = { "Regression" })
+	public void add_new_Subject_Status() throws Exception {
+		logger = extent.createTest("Add Subject Status Change",
+				"Changing the status");
+		logger.log(Status.INFO, "add new Subject Status");
+		
+		WebElement status = driver.findElement(SubjectsPage.status);
+		status.click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster"+toaster);
+		WebElement status1 = driver.findElement(SubjectsPage.status);
+		status1.click();
+		Actions keyDown1 = new Actions(driver);
+		keyDown1.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+
+
+
+	}
+
 
 	// Delete Subject clicking on Yes
-	@Test(priority = 12, groups = { "Delete" })
+	@Test(priority = 13, groups = { "Delete" })
 	public void Delete_Subject_Yes() throws Exception {
 		logger = extent.createTest("Delete Subject - Yes", "Delete subject Yes");
 		logger.log(Status.INFO, "Delete Subject");

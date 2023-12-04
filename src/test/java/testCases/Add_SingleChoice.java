@@ -444,7 +444,7 @@ public class Add_SingleChoice extends BaseClass {
 
 		driver.findElement(Add_QuestionsPage.Save_button).click();
 		Thread.sleep(1000);
-		driver.findElement(Add_QuestionsPage.Save_as_publish).click();
+		driver.findElement(Add_QuestionsPage.Save_as_draft).click();
 		Thread.sleep(3000);
 		try {
 			driver.findElement(ToasterObject.toaster).isDisplayed();
@@ -455,7 +455,7 @@ public class Add_SingleChoice extends BaseClass {
 				Thread.sleep(2000);
 				driver.findElement(Add_QuestionsPage.cancel_button).click();
 				Thread.sleep(2000);
-			} else if (toaster.contains("Question created and published")) {
+			} else if (toaster.contains("Questions created and saved as draft")) {
 				logger.log(Status.INFO, toaster);
 				System.out.println(toaster);
 				Thread.sleep(2000);
@@ -466,6 +466,17 @@ public class Add_SingleChoice extends BaseClass {
 			System.out.println(e);
 			logger.log(Status.ERROR, e);
 		}
+		
+		WebElement status = driver.findElement(Add_QuestionsPage.status);
+		status.click();
+		Actions keyDown11 = new Actions(driver);
+		keyDown11.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(3000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster---"+toaster);
+		
+		Thread.sleep(2000);
+
 
 	}
 
@@ -500,7 +511,7 @@ public class Add_SingleChoice extends BaseClass {
 	}
 
 	// wait for search to display and enter text then capture results
-	@Test(priority = 14, groups = { "Regression" })
+	@Test(priority = 15, groups = { "Regression" })
 	public void View_Question() throws Exception {
 		logger = extent.createTest("View Question  ", "View question");
 		logger.log(Status.INFO, "search question");
@@ -520,20 +531,21 @@ public class Add_SingleChoice extends BaseClass {
 	}
 
 	// Edit Question
-	@Test(priority = 15, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 14, groups = { "Regression", "SmokeTest" })
 	public void Edit_Question() throws Exception {
 		logger = extent.createTest("Edit Question", "Edit Question");
 		logger.log(Status.INFO, "Edit question");
 		driver.get(config.Questions());
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
-		WebElement CTA = wait.until(ExpectedConditions.elementToBeClickable(Add_QuestionsPage.CTA_Button));
-
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		WebElement CTA = driver.findElement(Add_QuestionsPage.CTA_Button);
 		CTA.click();
 		Actions keyDown = new Actions(driver);
 		keyDown.sendKeys(Keys.chord(Keys.ENTER, Keys.ENTER)).perform();
 		Thread.sleep(2000);
+	
 		WebElement Question = driver.findElement(Add_QuestionsPage.Question_Content);
+		Question.click();
 		Question.clear();
 		Question.sendKeys("Question Edited - choose correct " + Wrapper.AlphaNumericString(15));
 		System.out.println("Question is entered");
@@ -629,8 +641,11 @@ public class Add_SingleChoice extends BaseClass {
 
 		WebElement Add = wait.until(ExpectedConditions.elementToBeClickable(Add_QuestionsPage.Add_New_Question));
 		Add.click();
-		driver.findElement(Add_QuestionsPage.Single_Choice).isDisplayed();
-		driver.findElement(Add_QuestionsPage.Single_Choice).click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.TAB, Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		//driver.findElement(Add_QuestionsPage.Single_Choice).isDisplayed();
+		//driver.findElement(Add_QuestionsPage.Single_Choice).click();
 		Thread.sleep(2000);
 	}
 

@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import PageObjects.CertficationsPage;
-
 import PageObjects.ToasterObject;
 import utility.Wrapper;
 
@@ -692,6 +691,26 @@ public class Certifications extends BaseClass {
 			System.out.println("Delete Element is Absent");
 			logger.log(Status.INFO, "Delete Element is Absent for cert");
 		}
+	}
+	@Test(priority = 13, groups = { "Regression" })
+	public void Certifications_Status() throws Exception {
+		logger = extent.createTest("Add Certifications Status Change",
+				"Changing the status");
+		logger.log(Status.INFO, "add new Certifications Status");
+		Thread.sleep(3000);
+		WebElement status = driver.findElement(CertficationsPage.status);
+		status.click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(3000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster---"+toaster);
+		
+		Thread.sleep(2000);
+
+		WebElement Toggle = driver.findElement(CertficationsPage.Toggle);
+		Toggle.click();
+		
 	}
 
 	// add new button click method used as callback

@@ -91,6 +91,56 @@ public class ReadConfig {
 		String Goals = pro.getProperty("Goals");
 		return Goals;
 	}
+	
+	public String CST() {
+		String CST = pro.getProperty("CST");
+		return CST;
+	}
+	
+	public String departments() {
+		String departments = pro.getProperty("departments");
+		return departments;
+	}
+	public String admin_department() {
+		String admin_department = pro.getProperty("admin_department");
+		return admin_department;
+	}
+	public String DidyouKnow() {
+		String DidyouKnow = pro.getProperty("DidyouKnow");
+		return DidyouKnow;
+	}
+	public String admin_forgotpass() {
+		String admin_forgotpass = pro.getProperty("admin_forgotpass");
+		return admin_forgotpass;
+	}
+	public String helpandsupport() {
+		String helpandsupport = pro.getProperty("helpandsupport");
+		return helpandsupport;
+	}
+	
+	public String Job_title() {
+		String Job_title = pro.getProperty("Job_title");
+		return Job_title;
+	}
+	public String Lerners_upload() {
+		String Lerners_upload = pro.getProperty("Lerners_upload");
+		return Lerners_upload;
+	}
+	
+	public String Permissions() {
+		String Permissions = pro.getProperty("Permissions");
+		return Permissions;
+	}
+	
+	public String userroles() {
+		String userroles = pro.getProperty("userroles");
+		return userroles;
+	}
+	
+	public String questions_upload() {
+		String questions_upload = pro.getProperty("questions_upload");
+		return questions_upload;
+	}
 
 
 	// add methods to read different parameters from config file
@@ -128,7 +178,25 @@ public class ReadConfig {
 		String UserWebApp = pro.getProperty("TodoChallenges");
 		return UserWebApp;
 	}
+	public String Forgotpass() {
+		String UserWebApp = pro.getProperty("Forgotpass");
+		return UserWebApp;
+	}
 	
+	public String Reset() {
+		String UserWebApp = pro.getProperty("Reset");
+		return UserWebApp;
+	}
+	
+	public String Learntab() {
+		String UserWebApp = pro.getProperty("Learntab");
+		return UserWebApp;
+	}
+	public String Squadpage() {
+		String UserWebApp = pro.getProperty("Squadpage");
+		return UserWebApp;
+	}
+
 
 	/*
 	 * //mobile public String filepath() { String filepath =

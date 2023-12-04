@@ -8,7 +8,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -437,8 +436,9 @@ public class Add_KLP extends BaseClass {
 	}
 
 	// add new button click method used as callback
-	public void Click_Add_New_KLP() {
+	public void Click_Add_New_KLP() throws Exception {
 		driver.get(config.klp());
+		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
 
 		WebElement Add = wait.until(ExpectedConditions.elementToBeClickable(KLP_Page.Add_New_Klp));

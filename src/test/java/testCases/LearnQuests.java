@@ -22,6 +22,9 @@ public class LearnQuests extends BaseClass {
 	public void createQuest() throws Exception {
 		logger = extent.createTest("quests", "topic required ");
 		logger.log(Status.ERROR, "Topic Required");
+		driver.get(config.LearnQuest());
+		Thread.sleep(2000);
+
 		Click_Add_learnQuests();
 		Thread.sleep(2000);
 		driver.findElement(LearnQuests_Page.createQuest).click();
@@ -154,7 +157,7 @@ public class LearnQuests extends BaseClass {
 	public void Quest_Valid() throws Exception {
 		// logger = extent.createTest("Create Quest", "Create New Quest ");
 		// Click_Add_learnQuests();
-		driver.get("http://maxlearn-adminqa.s3-website-us-east-1.amazonaws.com/data-list/learn-quests");
+		driver.get(config.LearnQuest());
 		Thread.sleep(2000);
 		System.out.println("Quest page opened");
 		Thread.sleep(2000);
@@ -247,6 +250,11 @@ public class LearnQuests extends BaseClass {
 		}
 	}
 
+	
+	
+	
+	
+	
 	// wait for search to display and enter text then capture results
 	@Test(priority = 6, groups = { "Regression" })
 	public void Search_quest() throws Exception {
@@ -406,7 +414,7 @@ public class LearnQuests extends BaseClass {
 			Thread.sleep(2000);
 		}
 	}
-
+	
 	// Delete quest clicking on Yes
 	@Test(priority = 10, groups = { "Regression" })
 	public void Delete_quest_Yes() throws Exception {
@@ -454,6 +462,27 @@ public class LearnQuests extends BaseClass {
 			System.out.println("Delete Element is Absent");
 			logger.log(Status.INFO, "Delete Element is Absent for quest");
 		}
+	}
+	
+	@Test(priority = 11, groups = { "Regression" })
+	public void LearningPath_Status() throws Exception {
+		logger = extent.createTest("Add LearningPath Status Change",
+				"Changing the status");
+		logger.log(Status.INFO, "add new LearningPath Status");
+		Thread.sleep(3000);
+		WebElement status = driver.findElement(LearnQuests_Page.status);
+		status.click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(3000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster---"+toaster);
+		
+		Thread.sleep(2000);
+
+		WebElement Toggle = driver.findElement(LearnQuests_Page.Toggle);
+		Toggle.click();
+		
 	}
 
 	// add new button click method used as callback

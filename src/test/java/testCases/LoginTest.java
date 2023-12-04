@@ -21,9 +21,11 @@ public class LoginTest extends BaseClass {
 	public static void login_Workspace_Id() throws InterruptedException {
 		logger = extent.createTest("verify valid WorkSpaceId", "Workspace Id");
 		Thread.sleep(2000);
+		driver.get("https://admin.staging.maxlearn.com/");
+		Thread.sleep(2000);
 		System.out.println("Enter the valid Workspace id");
 		WebElement workspace = driver.findElement(LoginPage.Workspace);
-		workspace.sendKeys("MaxLearn_QA");
+		workspace.sendKeys("maxlearnstaging");
 		// workspace.sendKeys(excel.getDataSheetName("Login", 15,1));
 		Thread.sleep(2000);
 		WebElement proceed = driver.findElement(LoginPage.Workspace_proceed);

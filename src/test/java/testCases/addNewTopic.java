@@ -1,9 +1,7 @@
 
 package testCases;
 
-import static org.testng.Assert.assertEquals;
 
-import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.Keys;
@@ -17,7 +15,7 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 
-import PageObjects.LoginPage;
+
 import PageObjects.ToasterObject;
 import PageObjects.TopicsPage;
 import utility.Wrapper;
@@ -116,9 +114,6 @@ public class addNewTopic extends BaseClass {
 		System.out.println("subject selected");
 
 		driver.findElement(TopicsPage.Topic_publish).click();
-		Actions dragger = new Actions(driver);
-		WebElement element = driver.findElement(ToasterObject.innerscroll);
-		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
 		Thread.sleep(2000);
 
 		try {
@@ -327,9 +322,36 @@ public class addNewTopic extends BaseClass {
 		System.out.println("clicked on cancel button");
 		logger.log(Status.INFO, "cancelled delete");
 	}
+	@Test(priority = 9, groups = { "Regression" })
+	public void add_new_Topic_Status() throws Exception {
+		logger = extent.createTest("Add Topic Status Change",
+				"Changing the status");
+		logger.log(Status.INFO, "add new Topic Status");
+		
+		WebElement status = driver.findElement(TopicsPage.status);
+		status.click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster---"+toaster);
+		
+		Thread.sleep(3000);
+		
+		WebElement status1 = driver.findElement(TopicsPage.status);
+		status1.click();
+		Actions keyDown1 = new Actions(driver);
+		keyDown1.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		String Message1 = driver.findElement(TopicsPage.status).getText();
 
+		System.out.println("Status is ---"+Message1);
+
+
+
+	}
 	// Delete Topic clicking on Yes
-	@Test(priority = 9, groups = { "Delete" })
+	@Test(priority = 10, groups = { "Delete" })
 	public void Delete_Topic_Yes() throws Exception {
 		logger = extent.createTest("Delete Topic - yes", "Delete topic Yes");
 
@@ -366,9 +388,11 @@ public class addNewTopic extends BaseClass {
 
 	// add new button click method used as callback
 	public void Click_Add_New_Topic() throws InterruptedException {
+		Thread.sleep(2000);
 		driver.get(config.topics());
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
 		WebElement Add = wait.until(ExpectedConditions.elementToBeClickable(TopicsPage.Add_New_topic));
+		Thread.sleep(2000);
 		Add.click();
 		Thread.sleep(3000);
 	}

@@ -15,7 +15,6 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 
-import PageObjects.Category;
 import PageObjects.ChallengePage;
 import PageObjects.ToasterObject;
 import utility.Wrapper;
@@ -27,6 +26,9 @@ public class Challenges extends BaseClass {
 	public void Add_Challenge_Name_Required() throws Exception {
 		logger = extent.createTest("Challenge name*", "add Challenge Name required ");
 		logger.log(Status.INFO, "add new Challenge Name Required");
+		Thread.sleep(2000);
+		driver.get(config.Challenge());
+
 		Click_Add_New_Challenge();
 
 		Thread.sleep(2000);
@@ -376,7 +378,7 @@ public class Challenges extends BaseClass {
 		logger.log(Status.INFO, chars.getText());
 		Thread.sleep(2000);
 		assertEquals(chars.getText(), "max:495 char");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 
 	@Test(priority = 9, groups = { "Regression" })
@@ -574,6 +576,32 @@ public class Challenges extends BaseClass {
 		driver.findElement(ChallengePage.PickLearners).click();
 		Thread.sleep(2000);
 
+		
+		WebElement Parameter = driver.findElement(ChallengePage.Parameter);
+		Parameter.click();
+		Thread.sleep(2000);
+		Actions keyDown21 = new Actions(driver);
+		keyDown21.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+		System.out.println("Parameter is Selected");
+		Thread.sleep(2000);
+
+		WebElement Criteria = driver.findElement(ChallengePage.criteria);
+		Criteria.click();
+		Thread.sleep(2000);
+		Actions keyDown1 = new Actions(driver);
+		keyDown1.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+		System.out.println("Critera is Selected");
+		Thread.sleep(2000);
+
+		WebElement Value = driver.findElement(ChallengePage.Value);
+		Value.click();
+		Value.sendKeys("testing");
+		Thread.sleep(2000);
+		System.out.println("Value is enterd");
+		
+		WebElement Add = driver.findElement(ChallengePage.Ruleset_add);
+		Add.click();
+
 		// learners selection
 		driver.findElement(ChallengePage.Individual_option1).click();
 		Thread.sleep(2000);
@@ -588,6 +616,7 @@ public class Challenges extends BaseClass {
 		WebElement Assignedcount = driver.findElement(ChallengePage.Learners_count);
 		System.out.println(Assignedcount.getText());
 		logger.info("Count:" + Assignedcount.getText());
+		Thread.sleep(3000);
 
 		driver.findElement(ChallengePage.CreateChallenge_submit).click();
 		System.out.println("valid case create challenge");
@@ -747,20 +776,52 @@ public class Challenges extends BaseClass {
 		logger.log(Status.INFO, "Total number of Members are--" + Count);
 
 	}
+	// view Notification Tab
+		@Test(priority = 17, groups = { "Regression" })
+		public void View_Notification_Tab() throws Exception {
+			logger = extent.createTest("View Notification Tab", "view Notification Tab details");
+			logger.log(Status.INFO, "view Notification");
+			driver.get(config.Challenge());
+			Thread.sleep(2000);
+			WebElement view_Challenge = driver.findElement(ChallengePage.View_Challenge);
+			view_Challenge.click();
+
+			driver.findElement(ChallengePage.Notification_Tab).click();
+
+			// capture details
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+
+			WebElement Notification = wait.until(ExpectedConditions.elementToBeClickable(ChallengePage.Notification_Tab));
+			Notification.isDisplayed();
+			String Message1 = Notification.getText();
+			System.out.println("Tab Text--" + Message1);
+			logger.log(Status.INFO, "Tab - " + Message1);
+			
+			WebElement toggle = wait.until(ExpectedConditions.elementToBeClickable(ChallengePage.toggle));
+			toggle.isDisplayed();
+			String text = toggle.getText();
+			System.out.println("Toggle button Text--" + text);
+			logger.log(Status.INFO, "Tab - " + text);
+			
+			
+
+			
+
+		}
 
 	// Edit Challenge
-	@Test(priority = 17, groups = { "Regression" })
+	@Test(priority = 18, groups = { "Regression" })
 	public void Edit_Challenge() throws Exception {
 		logger = extent.createTest("Edit Challenge", "Challenge Edit");
 		logger.log(Status.INFO, "Edit Challenge");
 		driver.get(config.Challenge());
 		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-		if (driver.findElements(ChallengePage.CTA_Button).size() > 0) {
+		if (driver.findElements(ChallengePage.CTA_Button1).size() > 0) {
 
 			System.out.println("Edit Element is Present");
 
-			WebElement CTA = wait.until(ExpectedConditions.elementToBeClickable(ChallengePage.CTA_Button));
+			WebElement CTA = wait.until(ExpectedConditions.elementToBeClickable(ChallengePage.CTA_Button1));
 			CTA.click();
 			Actions keyDown = new Actions(driver);
 			keyDown.sendKeys(Keys.chord(Keys.ENTER, Keys.ENTER)).perform();
@@ -804,7 +865,7 @@ public class Challenges extends BaseClass {
 	}
 
 	// Delete Challenge clicking on cancel
-	@Test(priority = 18, groups = { "Regression" })
+	@Test(priority = 19, groups = { "Regression" })
 	public void Delete_Challenge_Cancel() throws Exception {
 		logger = extent.createTest("Delete Challenge No", "verify Challenge delete no");
 		logger.log(Status.INFO, "Delete Challenge Cancel");
@@ -829,9 +890,39 @@ public class Challenges extends BaseClass {
 			logger.log(Status.INFO, "Delete Element is Absent for challenge");
 		}
 	}
+	@Test(priority = 20, groups = { "Regression" })
+	public void Challenge_Status() throws Exception {
+		logger = extent.createTest("Add Challenge Status Change",
+				"Changing the status");
+		logger.log(Status.INFO, "add new Challenge Status");
+		driver.get(config.Challenge());
 
+		Thread.sleep(3000);
+		WebElement status = driver.findElement(ChallengePage.status1);
+		status.click();
+		Actions keyDown = new Actions(driver);
+		keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		String toaster = driver.findElement(ToasterObject.toaster).getText();
+		System.out.println("Text in Toaster---"+toaster);
+		
+		WebElement status1 = driver.findElement(ChallengePage.status1);
+		status1.click();
+		Actions keyDown1 = new Actions(driver);
+		keyDown1.sendKeys(Keys.chord(Keys.UP,Keys.ENTER)).perform();
+		Thread.sleep(2000);
+		
+		
+		WebElement Toggle = driver.findElement(ChallengePage.status);
+		Toggle.click();
+		Thread.sleep(3000);
+		WebElement Toggle1 = driver.findElement(ChallengePage.status);
+		Toggle1.click();
+		
+
+	}
 	// Delete Challenge clicking on Yes
-	@Test(priority = 19, groups = { "Delete" })
+	@Test(priority = 21, groups = { "Delete" })
 	public void Delete_Challenge_Yes() throws Exception {
 		logger = extent.createTest("Delete Challenge yes", "Delete challenge Yes");
 		logger.log(Status.INFO, "Delete Challenge");
