@@ -2,11 +2,10 @@ package webAppTest;
 
 import static org.testng.Assert.assertTrue;
 
-import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -21,12 +20,13 @@ public class ChallengesTest extends BaseClassWebApp {
 	public static void ToDo_Challenges_count() throws InterruptedException {
 		logger = extent.createTest("Challenges Count in To-do", "Challenges Count in ToDo Tab");
 		logger.log(Status.INFO, "Challenges count in To Do Tab");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.navigate().refresh();
 		System.out.println("Navigate to To Do Tab");
-		WebElement ToDo = driver.findElement(ChallengesObjects.ToDo_Tab);
-		ToDo.click();
-		System.out.println("To Do Tab is clicked");
+		driver.get(config.TodoChallenges());
+		//WebElement ToDo = driver.findElement(ChallengesObjects.ToDo_Tab);
+		//ToDo.click();
+		//System.out.println("To Do Tab is clicked");
 		Thread.sleep(2000);
 
 		List<WebElement> Challenges = driver.findElements(ChallengesObjects.Challenges_count);
@@ -133,14 +133,13 @@ public class ChallengesTest extends BaseClassWebApp {
 	public void Upcoming_Challenges() throws Exception {
 		logger = extent.createTest("Upcomming Challenges", "View upcomming challenge details");
 		logger.log(Status.INFO, "View upcomming challenge details");
-		Thread.sleep(1000);
-		To_Do_Tab();
 		Thread.sleep(2000);
 		if (driver.findElements(ChallengesObjects.upcomming).size() > 0) {
+			
+			
 			WebElement Upcomming_Challenge = driver.findElement(ChallengesObjects.upcomming);
-
 			Upcomming_Challenge.click();
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			System.out.println("Upcomming challenge button clicked");
 
 			WebElement view = driver.findElement(ChallengesObjects.upcomming_view);
@@ -408,6 +407,65 @@ public class ChallengesTest extends BaseClassWebApp {
 
 		}
 		Thread.sleep(2000);
+	}
+	
+	@Test(priority = 3, groups = { "Regression" })
+	public static void ToDo_Certification_count() throws InterruptedException {
+		logger = extent.createTest("Certification Count in To-do", "Certification Count in ToDo Tab");
+		logger.log(Status.INFO, "Certification count in To Do Tab");
+		Thread.sleep(3000);
+		driver.navigate().refresh();
+		System.out.println("Navigate to To Do Tab");
+		driver.get(config.TodoChallenges());
+		//WebElement ToDo = driver.findElement(ChallengesObjects.ToDo_Tab);
+		//ToDo.click();
+		//System.out.println("To Do Tab is clicked");
+		Thread.sleep(2000);
+
+		List<WebElement> Certifications = driver.findElements(ChallengesObjects.Certification_count);
+		int Certscount = Certifications.size();
+		System.out.println("Total Number of Certifications count: " + Certscount);
+		logger.log(Status.INFO, "Total Certifications are--" + Certscount);
+
+	}
+	
+	@Test(priority = 4, groups = { "Regression" })
+	public void Goals() throws Exception {
+		logger = extent.createTest("Goals", "View Goals details");
+		logger.log(Status.INFO, "View Goals details");
+		driver.get(config.TodoChallenges());
+		Thread.sleep(2000);
+		if (driver.findElements(ChallengesObjects.Goals).size() > 0) {
+			
+			
+			List<WebElement> Goals = driver.findElements(ChallengesObjects.Goals);
+			int Goalscount = Goals.size();
+			System.out.println("Total Number of Goals count: " + Goalscount);
+			logger.log(Status.INFO, "Total Goals are--" + Goalscount);
+
+			WebElement view = driver.findElement(ChallengesObjects.Goals_status);
+			view.isDisplayed();
+			Thread.sleep(3000);
+			String Message = view.getText();
+			System.out.println("Goal Status--" + Message);
+			logger.log(Status.INFO, "Goal status--" + Message);
+			Thread.sleep(1000);
+
+			
+
+		} else if (driver.findElements(ChallengesObjects.Empty_challenges_header).size() > 0) {
+			WebElement Empty_Goal = driver.findElement(ChallengesObjects.Empty_challenges_header);
+			String Message = Empty_Goal.getText();
+			System.out.println("Empty Goal Header--" + Message);
+			logger.log(Status.INFO, "Empty Goal Header--" + Message);
+			Thread.sleep(2000);
+
+			WebElement empty_subheader = driver.findElement(ChallengesObjects.Empty_challenges_subheader);
+			String Header = empty_subheader.getText();
+			System.out.println("Empty Goal Sub Header--" + Header);
+			logger.log(Status.INFO, "Empty Goal Sub Header--" + Header);
+
+		}
 	}
 
 }

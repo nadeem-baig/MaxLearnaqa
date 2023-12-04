@@ -14,7 +14,6 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import PageObjects.ToasterObject;
-import PageObjects.TopicsPage;
 import utility.Wrapper;
 import webAppPageObjects.MyProfileObjects;
 
@@ -211,15 +210,18 @@ public class MyProfileTest extends BaseClassWebApp {
 		}
 	}
 
-	@Test(priority = 6, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 7, groups = { "Regression", "SmokeTest" })
 	public static void Squad_Details() throws Exception {
 		logger = extent.createTest("Squad detail page", "Squad details of learner");
 		logger.log(Status.INFO, "Squad Details in Your Squad Tab");
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-		WebElement squad = wait.until(ExpectedConditions.elementToBeClickable(MyProfileObjects.your_Squad_tab));
+		//WebElement squad =driver.findElement(MyProfileObjects.your_Squad_tab);
 
-		squad.click();
+		//WebElement squad = wait.until(ExpectedConditions.elementToBeClickable(MyProfileObjects.your_Squad_tab));
+
+		//squad.click();
+		driver.get(config.Squadpage());
 		System.out.println("Total no.of squads are displayed");
 		Thread.sleep(5000);
 
@@ -293,5 +295,53 @@ public class MyProfileTest extends BaseClassWebApp {
 			}
 		}
 	}
+	@Test(priority = 6, groups = { "Regression" })
+	public void Analytics_Tab() throws InterruptedException, IOException {
+		logger = extent.createTest("Analytics Tab  ", "Analytics");
+		logger.log(Status.INFO, "Click on Analytics Tab");
+		System.out.println("Click on Analytics button");
+		Thread.sleep(5000);
+		WebElement Analytics = driver.findElement(MyProfileObjects.Analytics);
+		Analytics.click();
+		Thread.sleep(3000);
+		
+		WebElement Topics_subheader = driver.findElement(MyProfileObjects.text1);
+		String Header = Topics_subheader.getText();
+		System.out.println("Analytic Sub Header--" + Header);
+		logger.log(Status.INFO, "Analytic Sub Header--" + Header);
+		
+		WebElement Challenges_subheader = driver.findElement(MyProfileObjects.text2);
+		String Header1 = Challenges_subheader.getText();
+		System.out.println("Analytic Sub Header--" + Header1);
+		logger.log(Status.INFO, "Analytic Sub Header--" + Header1);
+		
+	}
+	
+	
+	@Test(priority = 8, groups = { "Regression", "SmokeTest" })
+	public static void Transcripts() throws InterruptedException, Exception {
+		logger = extent.createTest("Navigate to Transicipts page", "Learner Navigated to Transicipts page");
+		logger.log(Status.INFO, "Learner Navigated to Transicipts page");
+		Thread.sleep(2000);
+		WebElement profile_dropdown = driver.findElement(MyProfileObjects.profile_dropdown);
+		profile_dropdown.click();
+		System.out.println("profile dropdown clicked");
+		Thread.sleep(2000);
+		
+		WebElement Transcripts = driver.findElement(MyProfileObjects.Transcripts);
+		Transcripts.click();
+		System.out.println("My Transcripts clicked");
+		Thread.sleep(2000);
+		
+		WebElement Search = driver.findElement(MyProfileObjects.Transcripts_search);
+		Search.click();
+		Search.sendKeys("Challenge");
+		Thread.sleep(2000);
+		Wrapper.scrollDown(driver);
+		System.out.println("Searching Transcripts");
+
+
+	}
+
 
 }

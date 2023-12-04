@@ -15,6 +15,8 @@ public class AppLoginTest extends BaseClassWebApp {
 	public static void login_Workspace_Id() throws InterruptedException {
 		logger = extent.createTest("verify valid WorkSpaceId", "Workspace Id");
 		Thread.sleep(2000);
+		driver.get(config.UserWebApp());
+		Thread.sleep(3000);
 		System.out.println("Enter the valid Workspace id");
 		WebElement workspace = driver.findElement(LoginPageObjects.Workspace);
 		workspace.sendKeys(excel.getDataSheetName("Login", 15,1));
