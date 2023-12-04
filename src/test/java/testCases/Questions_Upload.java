@@ -1,0 +1,46 @@
+package testCases;
+
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.Status;
+
+import PageObjects.Add_QuestionsPage;
+import PageObjects.ToasterObject;
+
+public class Questions_Upload extends BaseClass{
+	
+	
+	@Test(priority = 1, groups = { "Regression", "SmokeTest" })
+	public void Questions_Excel_Upload() throws Exception {
+		logger = extent.createTest("Questions Excel Upload", "Questions Upload");
+		logger.log(Status.INFO, "Questions Upload");
+		Thread.sleep(5000);
+		driver.get(config.questions_upload());
+		Thread.sleep(5000);
+
+		driver.findElement(Add_QuestionsPage.Excel_Uplaod).click();
+		Thread.sleep(2000);
+		driver.findElement(Add_QuestionsPage.file)
+				.sendKeys(System.getProperty("user.dir") + "/TestData/Questions.xlsx");
+		Thread.sleep(2000);
+		System.out.println("Excel is uploaded");
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ESCAPE);
+		try {
+			WebElement Toaster = driver.findElement(ToasterObject.toaster);
+			Toaster.isDisplayed();
+			logger.info("Toaster:" + Toaster.getText());
+			String alert = Toaster.getText();
+			System.out.println("Toaster Message - " + alert);
+		} catch (Exception e) {
+			logger.info(e);
+		}
+
+	}
+
+
+}
