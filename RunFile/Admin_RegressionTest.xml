@@ -5,33 +5,41 @@
 	<test thread-count="5" name="Test">
 		<groups>
 			<run>
-				<include name="SmokeTest"></include>
+				<include name="Regression"></include>
 				<!--<include name="Delete"></include>-->
 			</run>
 		</groups>
 		<classes>
+			 <class name="testCases.Forgot_Password" />
 			<class name="testCases.LoginTest" />
 			<class name="testCases.AddNewCategory" />
 			<class name="testCases.AddNewSubject" />
 			<class name="testCases.addNewTopic" />
-
 			<class name="testCases.addNewDeck" />
 			<class name="testCases.AddNewFlashCard" />
 			<class name="testCases.Add_KLP" />
-
-
+			<class name="testCases.AddLearners" />
 			<class name="testCases.Add_SingleChoice" />
 			<class name="testCases.Add_MultiChoice" />
 			<class name="testCases.Add_Put_in_Order_Question" />
-			<class name="testCases.Add_True_False" />
-
-			<class name="testCases.AddLearners" />
-			<class name="testCases.Manage_Squads" />
-			<class name="testCases.Challenges" />
-			<class name="testCases.Add_Goals" />
+            <class name="testCases.Add_True_False" />
+            <class name="testCases.Challenges" />
 			<class name="testCases.LearnQuests" />
-
+			<class name="testCases.Manage_Squads" />
 			<class name="testCases.Certifications" />
+			<class name="testCases.Departments" />
+			<class name="testCases.JobTitle" />
+			<class name="testCases.Admin_EditProfile" />
+			<class name="testCases.UserRoles" />
+			<class name="testCases.Permission_Settings" />
+			<class name="testCases.Help_support" />
+			<class name="testCases.Did_You_Know" />
+
+
+			<!-- 
+			
+			<class name="testCases.Add_Goals" />
+			-->
 		</classes>
 
 

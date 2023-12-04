@@ -12,9 +12,11 @@
 		</groups>
 		<classes>
 			<class name="webAppTest.AppLoginTest" />
-			<class name="webAppTest.HomePage" />
+			 <class name="webAppTest.Challenges_sample" />
+
+			<!-- <class name="webAppTest.HomePage" />
 			<class name="webAppTest.MyProfileTest" />
-			<class name="webAppTest.ChallengesTest" />
+			<class name="webAppTest.ChallengesTest" />-->
 		</classes>
 
 
