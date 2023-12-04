@@ -10,7 +10,7 @@ public class HomePageObjects {
 	public static By Empty_challenges_subheader =By.xpath("//P[@class='empty__home--text_subHeader'][text()='Challenges will appear here once it has assigned by the administrator.']");
 	public static By challenges =By.xpath("//div[@class='d-flex max-home_challenges__card-container']");
 	public static By viewAll_Button =By.xpath("//button[contains(text(),'View all')]");
-	public static By todo_view =By.xpath("//h2[text()='Let’s explore Maxlearn activities!']");
+	public static By todo_view =By.xpath("(//H2)[1]");
 
 
 
