@@ -122,7 +122,9 @@ public class Did_You_Know extends BaseClass{
 		Thread.sleep(2000);
 		WebElement Headline = driver.findElement(Did_You_KnowPages.Headline);
 		Headline.click();
-		Headline.sendKeys("Maxlearn");
+		Headline.sendKeys(excel.getDataSheetName("DidyouKnow", 1, 1));
+
+		//Headline.sendKeys("Maxlearn");
 		WebElement Description = driver.findElement(Did_You_KnowPages.description);
 		Description.click();
 		Description.sendKeys(Wrapper.randomeString(15));

@@ -16,7 +16,7 @@ public class Profile extends BaseClass {
 	@Test(priority = 1, groups = { "smokeTest" })
 	public void profile() throws InterruptedException {
 		logger = extent.createTest("Profile page ", "Profile page");
-		logger.log(Status.INFO, "Profile Edit");
+		logger.log(Status.INFO, "Profile Page opened");
 		Thread.sleep(4000);
 		// driver.findElement(Profilepage.Profiel_Nav).click();
 		Thread.sleep(1000);

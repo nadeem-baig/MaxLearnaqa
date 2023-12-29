@@ -25,8 +25,7 @@ public class LoginTest extends BaseClass {
 		Thread.sleep(2000);
 		System.out.println("Enter the valid Workspace id");
 		WebElement workspace = driver.findElement(LoginPage.Workspace);
-		workspace.sendKeys("maxlearnstaging");
-		// workspace.sendKeys(excel.getDataSheetName("Login", 15,1));
+		workspace.sendKeys(excel.getDataSheetName("Login", 15,1));
 		Thread.sleep(2000);
 		WebElement proceed = driver.findElement(LoginPage.Workspace_proceed);
 		proceed.click();

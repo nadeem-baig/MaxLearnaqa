@@ -120,7 +120,9 @@ public class Help_support extends BaseClass{
 		Thread.sleep(2000);
 		WebElement Name = driver.findElement(Help_SupportPages.Name);
 		Name.click();
-		Name.sendKeys("Maxlearn Automation");
+		Name.sendKeys(excel.getDataSheetName("Help_Support", 1, 1));
+
+		//Name.sendKeys("Maxlearn Automation");
 		Thread.sleep(2000);
 		
 		WebElement Issue_Type = driver.findElement(Help_SupportPages.Typeofissue);

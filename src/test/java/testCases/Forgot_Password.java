@@ -18,8 +18,7 @@ public class Forgot_Password extends BaseClass{
 		Thread.sleep(2000);
 		System.out.println("Enter the valid Workspace id");
 		WebElement workspace = driver.findElement(LoginPage.Workspace);
-		workspace.sendKeys("maxlearnstaging");
-		// workspace.sendKeys(excel.getDataSheetName("Login", 15,1));
+		workspace.sendKeys(excel.getDataSheetName("Login", 15,1));
 		Thread.sleep(2000);
 		WebElement proceed = driver.findElement(LoginPage.Workspace_proceed);
 		proceed.click();
@@ -110,7 +109,7 @@ public class Forgot_Password extends BaseClass{
 		Thread.sleep(3000);
 
 		WebElement email = driver.findElement(Forgot_PasswordPage.Email);
-		email.sendKeys("adi.susmitha@zensark.com");
+		email.sendKeys(excel.getDataSheetName("Login", 2, 1));
 		Thread.sleep(2000);
 		WebElement Verify = driver.findElement(Forgot_PasswordPage.Verification_button);
 		Verify.click();

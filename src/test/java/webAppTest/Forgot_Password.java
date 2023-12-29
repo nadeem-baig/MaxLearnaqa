@@ -112,7 +112,7 @@ public class Forgot_Password extends BaseClassWebApp{
 		Thread.sleep(3000);
 
 		WebElement email = driver.findElement(Forgot_PasswordPages.Email);
-		email.sendKeys("adi.susmitha@zensark.com");
+		email.sendKeys(excel.getDataSheetName("Login", 10, 1));
 		Thread.sleep(2000);
 		WebElement Verify = driver.findElement(Forgot_PasswordPages.Verification_button);
 		Verify.click();
