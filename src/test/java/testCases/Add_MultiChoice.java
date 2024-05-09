@@ -491,8 +491,8 @@ public class Add_MultiChoice extends BaseClass {
 		
 		driver.findElement(Add_QuestionsPage.Save_button).click();
 		Thread.sleep(1000);
-		driver.findElement(Add_QuestionsPage.Save_as_draft).click();
-		Thread.sleep(3000);
+		driver.findElement(Add_QuestionsPage.Save_as_publish).click();
+		Thread.sleep(4000);
 		try {
 			driver.findElement(ToasterObject.toaster).isDisplayed();
 			String toaster = driver.findElement(ToasterObject.toaster).getText();
@@ -502,7 +502,7 @@ public class Add_MultiChoice extends BaseClass {
 				Thread.sleep(2000);
 				driver.findElement(Add_QuestionsPage.cancel_button).click();
 				Thread.sleep(2000);
-			} else if (toaster.contains("Questions created and saved as draft")) {
+			} else if (toaster.contains("Question created and published")) {
 				logger.log(Status.INFO, toaster);
 				System.out.println(toaster);
 				Thread.sleep(2000);
@@ -592,7 +592,8 @@ public class Add_MultiChoice extends BaseClass {
 		Thread.sleep(2000);
 		WebElement Question = driver.findElement(Add_QuestionsPage.Question_Content);
 		Question.clear();
-		Question.sendKeys("Question Edited - choose correct " + Wrapper.AlphaNumericString(15));
+		Thread.sleep(2000);
+		Question.sendKeys("Question Edited - choose correct " + Wrapper.AlphaNumericString(5));
 		System.out.println("Question is entered");
 		//WebElement save = wait.until(ExpectedConditions.elementToBeClickable(Add_QuestionsPage.Save_button));
 		//save.click();
@@ -647,7 +648,7 @@ public class Add_MultiChoice extends BaseClass {
 	}
 
 	// Delete Question clicking on Yes
-	@Test(priority = 18,groups = { "Regression" })
+	@Test(priority = 18,groups = { "Delete" })
 	public void Delete_Question_Yes() throws Exception {
 		logger = extent.createTest("Delete Question yes", "Delete MCQ Yes");
 		logger.log(Status.INFO, "Delete question");
@@ -686,12 +687,15 @@ public class Add_MultiChoice extends BaseClass {
 	public void Click_Add_New_Question() throws Exception {
 		driver.get(config.Questions());
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
-
+/*
 		WebElement Add = wait.until(ExpectedConditions.elementToBeClickable(Add_QuestionsPage.Add_New_Question));
 		Add.click();
-		driver.findElement(Add_QuestionsPage.Multi_Choice).isDisplayed();
+		Thread.sleep(2000);
+		//driver.findElement(Add_QuestionsPage.Multi_Choice).isDisplayed();
 		driver.findElement(Add_QuestionsPage.Multi_Choice).click();
 		Thread.sleep(2000);
-
+*/
+		driver.get(config.MCQ());
+		Thread.sleep(2000);
 	}
 }

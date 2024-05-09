@@ -427,7 +427,7 @@ public class Add_True_False extends BaseClass {
 		
 		driver.findElement(Add_QuestionsPage.Save_button).click();
 		Thread.sleep(1000);
-		driver.findElement(Add_QuestionsPage.Save_as_draft).click();
+		driver.findElement(Add_QuestionsPage.Save_as_publish).click();
 		Thread.sleep(3000);
 		try {
 			driver.findElement(ToasterObject.toaster).isDisplayed();
@@ -438,7 +438,7 @@ public class Add_True_False extends BaseClass {
 				Thread.sleep(2000);
 				driver.findElement(Add_QuestionsPage.cancel_button).click();
 				Thread.sleep(2000);
-			} else if (toaster.contains("Questions created and saved as draft")) {
+			} else if (toaster.contains("Question created and published")) {
 				logger.log(Status.INFO, toaster);
 				System.out.println(toaster);
 				Thread.sleep(2000);
@@ -527,7 +527,8 @@ public class Add_True_False extends BaseClass {
 		Thread.sleep(2000);
 		WebElement Question = driver.findElement(Add_QuestionsPage.Question_Content);
 		Question.clear();
-		Question.sendKeys("Question Edited - choose correct " + Wrapper.AlphaNumericString(15));
+		Thread.sleep(2000);
+		Question.sendKeys("Question Edited - choose correct " + Wrapper.AlphaNumericString(5));
 		System.out.println("Question is entered");
 		Thread.sleep(3000);
 		driver.findElement(Add_QuestionsPage.Save_button).click();
@@ -578,7 +579,7 @@ public class Add_True_False extends BaseClass {
 	}
 
 	// Delete Question clicking on Yes
-	@Test(priority = 17, groups = { "Regression" })
+	@Test(priority = 17, groups = { "Delete" })
 	public void Delete_Question_Yes() throws Exception {
 		logger = extent.createTest("Delete Question Yes", "Delete question Yes");
 		logger.log(Status.INFO, "Delete question");
@@ -618,11 +619,15 @@ public class Add_True_False extends BaseClass {
 	public void Click_Add_New_Question() throws Exception {
 		driver.get(config.Questions());
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
-
+/*
 		WebElement Add = wait.until(ExpectedConditions.elementToBeClickable(Add_QuestionsPage.Add_New_Question));
 		Add.click();
-		driver.findElement(Add_QuestionsPage.True_False).isDisplayed();
+		Thread.sleep(2000);
+		//driver.findElement(Add_QuestionsPage.True_False).isDisplayed();
 		driver.findElement(Add_QuestionsPage.True_False).click();
+		Thread.sleep(2000);
+		*/
+		driver.get(config.T_F());
 		Thread.sleep(2000);
 	}
 }

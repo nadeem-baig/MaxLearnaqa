@@ -112,17 +112,18 @@ public class Manage_Squads extends BaseClass {
 		
 		WebElement Parameter = driver.findElement(Manage_Squads_Page.Parameter);
 		Parameter.click();
-		Thread.sleep(2000);
+		Parameter.sendKeys("D");
 		Actions keyDown = new Actions(driver);
-		keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+		keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
+		
 		System.out.println("Parameter is Selected");
 		Thread.sleep(2000);
 
 		WebElement Criteria = driver.findElement(Manage_Squads_Page.criteria);
 		Criteria.click();
-		Thread.sleep(2000);
+		Criteria.sendKeys("I");
 		Actions keyDown1 = new Actions(driver);
-		keyDown1.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+		keyDown1.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Critera is Selected");
 		Thread.sleep(2000);
 
@@ -201,11 +202,14 @@ public class Manage_Squads extends BaseClass {
 
 		WebElement Parameter = driver.findElement(Manage_Squads_Page.Parameter);
 		Parameter.click();
-		Thread.sleep(2000);
+		Parameter.sendKeys("D");
 		Actions keyDown = new Actions(driver);
-		keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+		keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
+		
 		System.out.println("Parameter is Selected");
 		Thread.sleep(2000);
+
+		
 
 		driver.findElement(Manage_Squads_Page.Ruleset_add).click();
 		try {
@@ -232,14 +236,16 @@ public class Manage_Squads extends BaseClass {
 	public void Add_Squad_Value_required() throws InterruptedException, Exception {
 		logger = extent.createTest("Create Squad Value required*", "verify create squad Value Rule set");
 		logger.log(Status.INFO, "Add new squad Value Required");
-
+		
+	
 		WebElement Criteria = driver.findElement(Manage_Squads_Page.criteria);
 		Criteria.click();
-		Thread.sleep(2000);
+		Criteria.sendKeys("I");
 		Actions keyDown1 = new Actions(driver);
-		keyDown1.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+		keyDown1.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Critera is Selected");
 		Thread.sleep(2000);
+
 
 		driver.findElement(Manage_Squads_Page.Ruleset_add).click();
 
@@ -396,17 +402,18 @@ public class Manage_Squads extends BaseClass {
 
 		WebElement Parameter = driver.findElement(Manage_Squads_Page.Parameter);
 		Parameter.click();
-		Thread.sleep(2000);
+		Parameter.sendKeys("D");
 		Actions keyDown = new Actions(driver);
-		keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+		keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
+		
 		System.out.println("Parameter is Selected");
 		Thread.sleep(2000);
 
 		WebElement Criteria = driver.findElement(Manage_Squads_Page.criteria);
 		Criteria.click();
-		Thread.sleep(2000);
+		Criteria.sendKeys("I");
 		Actions keyDown1 = new Actions(driver);
-		keyDown1.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+		keyDown1.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Critera is Selected");
 		Thread.sleep(2000);
 

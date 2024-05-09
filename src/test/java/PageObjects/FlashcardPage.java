@@ -19,14 +19,14 @@ public class FlashcardPage {
 		public static By Search = By.xpath("//input[@placeholder='Search']");
 		public static By No_data = By.xpath("//div[contains(text(),'No Data')]");
 		public static By search_result = By.id("demo");
-		public static By View_icon = By.xpath("//tbody/tr[1]/td[7]");
+		public static By View_icon = By.xpath("//td[7]//*[name()='svg']");
 	    public static By deck_Detail =By.id("row-0");
 
 	    public static By Flashcard_content=By.xpath("//div[@class='modal-body']//p");
 	    public static By Flashcard_preview_close=By.xpath("//h5[@class='modal-title']");
 
 
-	    public static By CTA_Button = By.xpath("(//button[@type='button'])[4]");
+	    public static By CTA_Button = By.xpath("//tbody/tr[1]/td[8]");
 		public static By Delete_Button = By.xpath("(//button[@type='button'])[6]");
 		public static By Delete_Yes = By.xpath("//button[@class='swal-button swal-button--confirm swal-button--danger'][text()='OK']");
 		public static By Delete_cancel = By.xpath("//button[@class='swal-button swal-button--cancel'][text()='Cancel']");

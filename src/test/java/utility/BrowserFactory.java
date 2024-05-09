@@ -16,7 +16,7 @@ public class BrowserFactory {
 
 	public static WebDriver startApplication(WebDriver driver, String browserName, String appURL) {
 		if (browserName.contentEquals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
 
 			Map<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("profile.default_content_setting_values.notifications", 1);
@@ -28,16 +28,16 @@ public class BrowserFactory {
 
 		} else if (browserName.contentEquals("Firefox")) {
 			
-			 System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
+			 System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver");
 			
 			driver = new FirefoxDriver();
 
 		} else if (browserName.contentEquals("IE")) {
-			 System.setProperty("webdriver.ie.driver", "./drivers/IEDriverserver.exe");
+			 System.setProperty("webdriver.ie.driver", "./drivers/IEDriverserver");
 			driver = new InternetExplorerDriver();
 		} else if (browserName.contentEquals("Edge")) {
 			
-			System.setProperty("webdriver.edge.driver", "./drivers/msedgedriver.exe");
+			System.setProperty("webdriver.edge.driver", "./drivers/msedgedriver");
 			Map<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("profile.default_content_setting_values.notifications", 1);
 			EdgeOptions options = new EdgeOptions();
@@ -46,7 +46,8 @@ public class BrowserFactory {
 
 			
 			driver = new EdgeDriver(options);
-		} else {
+		} 
+		else {
 			System.out.println("we do not support this browser");
 		}
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));

@@ -413,7 +413,9 @@ public class Challenges extends BaseClass {
 
 		driver.findElement(ChallengePage.Squad_option2).click();
 		Thread.sleep(2000);
-
+		driver.findElement(ChallengePage.Delete_cancel).click();
+		Thread.sleep(2000);
+		
 		driver.findElement(ChallengePage.ConfirmSelection).click();
 		Thread.sleep(2000);
 
@@ -579,17 +581,20 @@ public class Challenges extends BaseClass {
 		
 		WebElement Parameter = driver.findElement(ChallengePage.Parameter);
 		Parameter.click();
+		Parameter.sendKeys("D");
 		Thread.sleep(2000);
+		
 		Actions keyDown21 = new Actions(driver);
-		keyDown21.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+		keyDown21.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Parameter is Selected");
 		Thread.sleep(2000);
 
 		WebElement Criteria = driver.findElement(ChallengePage.criteria);
 		Criteria.click();
+		Criteria.sendKeys("I");
 		Thread.sleep(2000);
 		Actions keyDown1 = new Actions(driver);
-		keyDown1.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+		keyDown1.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Critera is Selected");
 		Thread.sleep(2000);
 
@@ -601,6 +606,7 @@ public class Challenges extends BaseClass {
 		
 		WebElement Add = driver.findElement(ChallengePage.Ruleset_add);
 		Add.click();
+		Thread.sleep(2000);
 
 		// learners selection
 		driver.findElement(ChallengePage.Individual_option1).click();
@@ -617,6 +623,10 @@ public class Challenges extends BaseClass {
 		System.out.println(Assignedcount.getText());
 		logger.info("Count:" + Assignedcount.getText());
 		Thread.sleep(3000);
+		
+		Wrapper.ScrollToTop(driver);
+		Thread.sleep(3000);
+
 
 		driver.findElement(ChallengePage.CreateChallenge_submit).click();
 		System.out.println("valid case create challenge");

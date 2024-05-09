@@ -25,7 +25,7 @@ public class Add_QuestionsPage {
 	public static By Save_button =By.xpath("//button[@id='popClick']");
 	public static By Save_as_publish =By.xpath("//span[normalize-space()='Save and Publish']");
 	public static By Status_text =By.xpath("(//select[@name='status'])[1]");
-	public static By Preview_close =By.xpath("(//button[@aria-label='Close']");
+	public static By Preview_close =By.xpath("(//span[@aria-hidden='true'][text()='x']");
 	public static By Preview_text =By.xpath("//div[@class='inside-secd']");
 	public static By Save_as_draft =By.xpath("//span[contains(text(),'Save as Draft')]");
 

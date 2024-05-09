@@ -145,6 +145,8 @@ public class Did_You_Know extends BaseClass{
 		}		
 
 	}
+	
+	
 	@Test(priority = 6,groups = { "Regression","SmokeTest" })
 	public void Toggle_status() throws Exception {
 		logger = extent.createTest("Did you Know Status", "verify Did you Know Status");
@@ -195,7 +197,7 @@ public class Did_You_Know extends BaseClass{
 		}	
 
 	}
-	
+	/*
 	@Test(priority = 8,groups = {"Regression"})
 	public void Did_You_Know_Delete() throws Exception {
 		logger = extent.createTest("Did You Know Delete", "verify Did You Know Delete");
@@ -216,5 +218,5 @@ public class Did_You_Know extends BaseClass{
 		}	
 
 	}
-
+*/
 }

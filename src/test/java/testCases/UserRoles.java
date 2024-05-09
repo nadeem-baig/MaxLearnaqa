@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 
+import PageObjects.Manage_Squads_Page;
 import PageObjects.ToasterObject;
 import PageObjects.User_RolePages;
 
@@ -23,7 +24,7 @@ public class UserRoles extends BaseClass {
 		logger = extent.createTest("AssignUser Parameter required*", "verify AssignUser Parameter Rule set");
 		logger.log(Status.INFO, "AssignUser Parameter Required");
 		driver.get(config.userroles());
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement Assign = driver.findElement(User_RolePages.Assign_User);
 		Assign.click();
 		Thread.sleep(2000);
@@ -55,9 +56,11 @@ public class UserRoles extends BaseClass {
 
 		WebElement Parameter = driver.findElement(User_RolePages.Parameter);
 		Parameter.click();
+		Parameter.sendKeys("D");
+
 		Thread.sleep(2000);
 		Actions keyDown = new Actions(driver);
-		keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+		keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Parameter is Selected");
 		Thread.sleep(2000);
 
@@ -87,9 +90,10 @@ public class UserRoles extends BaseClass {
 
 		WebElement Criteria = driver.findElement(User_RolePages.Criteria);
 		Criteria.click();
+		Criteria.sendKeys("I");
 		Thread.sleep(2000);
 		Actions keyDown1 = new Actions(driver);
-		keyDown1.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+		keyDown1.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Critera is Selected");
 		Thread.sleep(2000);
 
@@ -175,17 +179,19 @@ public class UserRoles extends BaseClass {
 		
 		WebElement Parameter = driver.findElement(User_RolePages.Parameter);
 		Parameter.click();
+		Parameter.sendKeys("D");
 		Thread.sleep(2000);
 		Actions keyDown1 = new Actions(driver);
-		keyDown1.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+		keyDown1.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Parameter is Selected");
 		Thread.sleep(2000);
 		
 		WebElement Criteria = driver.findElement(User_RolePages.Criteria);
 		Criteria.click();
+		Criteria.sendKeys("I");
 		Thread.sleep(2000);
 		Actions keyDown11 = new Actions(driver);
-		keyDown11.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+		keyDown11.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("Critera is Selected");
 		Thread.sleep(2000);
 		
@@ -251,7 +257,7 @@ public class UserRoles extends BaseClass {
 		logger = extent.createTest("Assign User Status", "Assign User Title Status");
 		logger.log(Status.INFO, "Assign User Status");
 		driver.get(config.userroles());
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		WebElement Status = driver.findElement(User_RolePages.Toggle);
 		Status.click();
 		Thread.sleep(2000);

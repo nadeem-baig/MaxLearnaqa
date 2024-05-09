@@ -179,6 +179,9 @@ public class LearnTab extends BaseClassWebApp {
 	logger = extent.createTest("Learn Category", "Learn Category in Learn Tab");
 	logger.log(Status.INFO, "Learn Category Flow in Learn Tab");
 	Thread.sleep(3000);
+	driver.get(config.Learntab());
+	Thread.sleep(2000);
+
 	WebElement learn = driver.findElement(LearnTab_Pages.LearnTab_Button);
 	learn.click();
 	Thread.sleep(3000);

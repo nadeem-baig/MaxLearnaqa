@@ -119,7 +119,7 @@ public class Change_Password extends BaseClassWebApp{
 		Thread.sleep(1000);
 		WebElement New_pass = driver.findElement(MyProfileObjects.New_pass);
 		New_pass.click();
-		New_pass.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+		New_pass.sendKeys(Keys.chord(Keys.COMMAND,"a", Keys.DELETE));
 		Thread.sleep(1000);
 		New_pass.sendKeys(excel.getDataSheetName("Login", 10, 2));
 		Thread.sleep(2000);
@@ -149,7 +149,7 @@ public class Change_Password extends BaseClassWebApp{
 		Thread.sleep(1000);
 		WebElement New_pass = driver.findElement(MyProfileObjects.New_pass);
 		New_pass.click();
-		New_pass.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+		New_pass.sendKeys(Keys.chord(Keys.COMMAND,"a", Keys.DELETE));
 		Thread.sleep(1000);
 		New_pass.sendKeys(excel.getDataSheetName("Login", 10, 2));
 		Thread.sleep(2000);
@@ -180,14 +180,14 @@ public class Change_Password extends BaseClassWebApp{
 			
 			WebElement Old_pass = driver.findElement(MyProfileObjects.Old_pass);
 			Old_pass.click();
-			Old_pass.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+			Old_pass.sendKeys(Keys.chord(Keys.COMMAND,"a", Keys.DELETE));
 			Thread.sleep(1000);
 			Old_pass.sendKeys(excel.getDataSheetName("Login", 10, 2));
 			Thread.sleep(2000);
 			
 			WebElement New_pass = driver.findElement(MyProfileObjects.New_pass);
 			New_pass.click();
-			New_pass.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+			New_pass.sendKeys(Keys.chord(Keys.COMMAND,"a", Keys.DELETE));
 			Thread.sleep(1000);
 			New_pass.sendKeys(excel.getDataSheetName("Login", 10, 2));
 			Thread.sleep(2000);
@@ -218,14 +218,14 @@ public class Change_Password extends BaseClassWebApp{
 			
 			WebElement Old_pass = driver.findElement(MyProfileObjects.Old_pass);
 			Old_pass.click();
-			Old_pass.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+			Old_pass.sendKeys(Keys.chord(Keys.COMMAND,"a", Keys.DELETE));
 			Thread.sleep(1000);
 			Old_pass.sendKeys("Maxlearn@1");
 			Thread.sleep(2000);
 			
 			WebElement New_pass = driver.findElement(MyProfileObjects.New_pass);
 			New_pass.click();
-			New_pass.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+			New_pass.sendKeys(Keys.chord(Keys.COMMAND,"a", Keys.DELETE));
 			Thread.sleep(1000);
 			New_pass.sendKeys("Maxlearn@1");
 			Thread.sleep(2000);
@@ -233,7 +233,7 @@ public class Change_Password extends BaseClassWebApp{
 			WebElement Confirm_pass = driver.findElement(MyProfileObjects.Confirm_pass);
 			Confirm_pass.click();
 			Thread.sleep(2000);
-			Confirm_pass.sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+			Confirm_pass.sendKeys(Keys.chord(Keys.COMMAND,"a", Keys.DELETE));
 			Thread.sleep(1000);
 			Confirm_pass.sendKeys("Maxlearn@1");
 			Thread.sleep(1000);

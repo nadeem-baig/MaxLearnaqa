@@ -172,13 +172,13 @@ public class addNewTopic extends BaseClass {
 		WebElement publish = wait.until(ExpectedConditions.elementToBeClickable(TopicsPage.Topic_publish));
 		// save topic
 		publish.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		try {
 			//WebElement Toaster = wait.until(ExpectedConditions.visibilityOfElementLocated(ToasterObject.toaster));
 			driver.findElement(ToasterObject.toaster).isDisplayed();
 			String toaster = driver.findElement(ToasterObject.toaster).getText();
-			if (toaster.contains("topics already exist")) {
+			if (toaster.contains("Topic already exist")) {
 				logger.log(Status.INFO, toaster);
 				System.out.println(toaster);
 				Thread.sleep(2000);

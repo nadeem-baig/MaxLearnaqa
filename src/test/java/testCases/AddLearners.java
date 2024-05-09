@@ -333,6 +333,9 @@ public class AddLearners extends BaseClass {
 		// hire date
 		WebElement hiredate = driver.findElement(LearnersPage.Learner_HireDate);
 		hiredate.click();
+		Thread.sleep(2000);
+		Wrapper.scrollDown(driver);
+		Thread.sleep(3000);
 		//hiredate.sendKeys(excel.getDataSheetName("Learners_Squads", 8, 1), Keys.TAB, Keys.TAB);
 		 driver.findElement(LearnersPage.today).click();
  

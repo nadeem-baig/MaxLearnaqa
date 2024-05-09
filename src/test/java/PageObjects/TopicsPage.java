@@ -10,7 +10,7 @@ public class TopicsPage {
 	public static By Subject_dropdown = By.xpath("//div[contains(text(),'Pick a subject')]");
 	public static By Topic_description = By.name("description");
 	public static By Topic_publish = By.xpath("//button[@type='submit']");
-	public static By Cancel_Topic = By.xpath("//button[contains(text(),'Cancel')]");
+	public static By Cancel_Topic = By.xpath("//button[@type='reset'][text()='Cancel']");
 	public static By Duplicate_Topic = By.xpath("//span[contains(text(),'topics already exist')]");
 
 	public static By error1 = By.xpath("//div[@class='form_error-message mt-25']");

@@ -13,6 +13,8 @@ public class LoginPageObjects {
 	public static By Workspace_proceed = By.xpath("//button[@class='login_button'][text()='Proceed']");
 	public static By invalid_model= By.id("swal2-html-container");
 	
-	public static By OK_popupclose = By.xpath("//button[normalize-space()='OK']");
+	//public static By OK_popupclose = By.xpath("//button[@type='button'][text()='OK']");
+	public static By OK_popupclose = By.xpath("//div[@class='swal2-actions']");
+
 	//span[normalize-space()='session expired']
 }

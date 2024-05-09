@@ -11,12 +11,14 @@
 			</run>
 		</groups>
 		<classes>
+		<class name="webAppTest.Forgot_Password" />
 			<class name="webAppTest.AppLoginTest" />
-			 <class name="webAppTest.Challenges_sample" />
-
-			<!-- <class name="webAppTest.HomePage" />
+			
+			<class name="webAppTest.HomePage" />
 			<class name="webAppTest.MyProfileTest" />
-			<class name="webAppTest.ChallengesTest" />-->
+			<class name="webAppTest.ChallengesTest" />
+			<class name="webAppTest.LearnTab" />
+			<class name="webAppTest.Change_Password" />
 		</classes>
 
 

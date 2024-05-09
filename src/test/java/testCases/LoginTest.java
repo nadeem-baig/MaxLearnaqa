@@ -140,8 +140,9 @@ public class LoginTest extends BaseClass {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		WebElement uname = wait.until(ExpectedConditions.visibilityOfElementLocated(LoginPage.username));
 		
-		uname.sendKeys(Keys.chord(Keys.CONTROL, "a"));
-		uname.sendKeys(Keys.DELETE);
+		uname.clear();
+		//uname.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+		//uname.sendKeys(Keys.DELETE);
 		
 		Thread.sleep(3000);
 		uname.sendKeys(excel.getDataSheetName("Login", 2, 1));

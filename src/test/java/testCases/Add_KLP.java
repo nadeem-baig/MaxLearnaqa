@@ -141,9 +141,10 @@ public class Add_KLP extends BaseClass {
 		keyDown2.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		Thread.sleep(1000);
 		driver.findElement(KLP_Page.Save_Klp).click();
-		Actions dragger = new Actions(driver);
-		WebElement element = driver.findElement(ToasterObject.innerscroll);
-		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+		//Actions dragger = new Actions(driver);
+		//WebElement element = driver.findElement(KLP_Page.errorMessage);
+		
+		//dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
 		Thread.sleep(2000);
 		try {
 			WebElement titleerror = driver.findElement(KLP_Page.errorMessage);
@@ -288,10 +289,14 @@ public class Add_KLP extends BaseClass {
 		logger.log(Status.INFO, "search KLP");
 
 		driver.get(config.klp());
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-		WebElement search_KLP = wait.until(ExpectedConditions.elementToBeClickable(KLP_Page.Search));
+		Thread.sleep(6000);
+	
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		//WebElement search_KLP = wait.until(ExpectedConditions.elementToBeClickable(KLP_Page.Search));
+		WebElement search_KLP = driver.findElement(KLP_Page.Search);
+
 		search_KLP.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		search_KLP.sendKeys(excel.getDataSheetName("ManageContent", 10, 1));
 		logger.log(Status.INFO, "Search ");
 		Thread.sleep(2000);
@@ -345,9 +350,10 @@ public class Add_KLP extends BaseClass {
 		Thread.sleep(3000);
 		WebElement CTA = driver.findElement(KLP_Page.CTA_Button);
 		CTA.click();
+		Thread.sleep(3000);
 		Actions keyDown = new Actions(driver);
-		keyDown.sendKeys(Keys.chord(Keys.ENTER, Keys.ENTER)).perform();
-		Thread.sleep(2000);
+		keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+		Thread.sleep(3000);
 		WebElement Description = driver.findElement(KLP_Page.Klp_Content);
 		Description.clear();
 		Description.sendKeys(Wrapper.AlphaNumericString(10));

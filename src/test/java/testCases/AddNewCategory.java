@@ -206,7 +206,9 @@ public class AddNewCategory extends BaseClass {
 		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 150).release(element).build().perform();
 		Thread.sleep(2000);
 
-		driver.findElement(Category.category_Description).sendKeys(excel.getDataSheetName("ManageContent", 2, 1));
+		WebElement Text= driver.findElement(Category.category_Description);
+		Text.clear();
+		Text.sendKeys(excel.getDataSheetName("ManageContent", 2, 1));
 		System.out.println("Description filled");
 	
 		robot.keyPress(KeyEvent.VK_TAB);

@@ -335,16 +335,18 @@ public class Certifications extends BaseClass {
 
 		WebElement SelectParameter = driver.findElement(CertficationsPage.Parameter);
 		SelectParameter.click();
+		SelectParameter.sendKeys("D");
 		Thread.sleep(2000);
 		Actions keyDown3 = new Actions(driver);
-		keyDown3.sendKeys(Keys.chord(Keys.DOWN, Keys.TAB)).perform();
+		keyDown3.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		Thread.sleep(1000);
 
 		WebElement Selectcriteria = driver.findElement(CertficationsPage.Criteria);
 		Selectcriteria.click();
+		Selectcriteria.sendKeys("I");
 		Thread.sleep(2000);
 		Actions keyDown4 = new Actions(driver);
-		keyDown4.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.TAB)).perform();
+		keyDown4.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		Thread.sleep(1000);
 
 		WebElement Selectvalue = driver.findElement(CertficationsPage.Value);
@@ -606,6 +608,8 @@ public class Certifications extends BaseClass {
 	public void Delete_Cert_Cancel() throws Exception {
 		logger = extent.createTest("Delete cert No", "verify cert delete no");
 		logger.log(Status.INFO, "Delete cert Cancel");
+		driver.get(config.Certifications());
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 
 		WebElement status = wait.until(ExpectedConditions.elementToBeClickable(CertficationsPage.status_dropdown));

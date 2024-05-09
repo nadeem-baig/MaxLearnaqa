@@ -292,9 +292,9 @@ public class addNewDeck extends BaseClass {
 		WebElement CTA = wait.until(ExpectedConditions.elementToBeClickable(DecksPage.CTA_Button));
 		
 		CTA.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Actions keyDown = new Actions(driver);
-		keyDown.sendKeys(Keys.chord(Keys.ENTER, Keys.ENTER)).perform();
+		keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
 		Thread.sleep(2000);
 		WebElement Title = driver.findElement(DecksPage.deckTitle);
 		Title.click();

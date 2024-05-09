@@ -70,6 +70,23 @@ public class ReadConfig {
 		String Questions = pro.getProperty("Questions");
 		return Questions;
 	}
+	public String Singlechoice() {
+		String Singlechoice = pro.getProperty("Singlechoice");
+		return Singlechoice;
+	}
+	public String MCQ() {
+		String MCQ = pro.getProperty("MCQ");
+		return MCQ;
+	}
+	public String Putinorder() {
+		String Putinorder = pro.getProperty("Putinorder");
+		return Putinorder;
+	}
+	public String T_F() {
+		String T_F = pro.getProperty("T_F");
+		return T_F;
+	}
+
 
 
 	public String Challenge() {
