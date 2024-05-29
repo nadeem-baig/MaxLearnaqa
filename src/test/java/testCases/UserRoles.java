@@ -122,7 +122,7 @@ public class UserRoles extends BaseClass {
 
 		WebElement Value = driver.findElement(User_RolePages.Value);
 		Value.click();
-		Value.sendKeys("testing");
+		Value.sendKeys("IT");
 		Thread.sleep(2000);
 		System.out.println("Value is enterd");
 
@@ -197,7 +197,7 @@ public class UserRoles extends BaseClass {
 		
 		WebElement Value = driver.findElement(User_RolePages.Value);
 		Value.click();
-		Value.sendKeys("testing");
+		Value.sendKeys("IT");
 		Thread.sleep(2000);
 		System.out.println("Value is enterd");
 		
@@ -274,16 +274,16 @@ public class UserRoles extends BaseClass {
 
 	}
 	
-	@Test(priority = 9, groups = { "Regression" })
+	@Test(priority = 9, groups = { "Regression","test" })
 	public void Delete_User_Cancel() throws Exception {
 		logger = extent.createTest("Delete User No", "Delete User - No");
-		driver.get("https://admin.staging.maxlearn.com/data-list/userslist");
+		driver.get("https://admin.maxlearn.com/data-list/userslist");
 		Thread.sleep(3000);
-		driver.findElement(User_RolePages.CTA).click();
-		Thread.sleep(2000);
-		WebElement Delete = driver.findElement(User_RolePages.Delete);
-		Delete.click();	
-		
+		WebElement cta= driver.findElement(User_RolePages.CTA);
+		cta.click();
+		cta.sendKeys(Keys.DOWN,Keys.DOWN,Keys.ENTER);
+		Thread.sleep(4000);
+				
 		WebElement Cancel = driver.findElement(User_RolePages.Delete_cancel);
 		Cancel.click();
 		Thread.sleep(2000);

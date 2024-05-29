@@ -32,9 +32,11 @@ public class ChallengePage
 	public static By IndividualLearners = By.xpath("//input[@type='radio'])[text()='Individual Learners']");
 	public static By Type_Squads = By.xpath("(//input[@type='radio'])[2]");    //squad radio button
 	public static By PickSquads = By.xpath("//button[@type='button'][text()='Pick Teams']");   //pick squad button
-	public static By Squad_option1 = By.xpath("(//*[contains(text(), 'Teams')]/ancestor-or-self::*/descendant::*/INPUT[@type='checkbox' and contains(@class, 'ant-checkbox-input')])[11]");
-	public static By  Squad_option2 = By.xpath("(//*[contains(text(), 'Teams')]/ancestor-or-self::*/descendant::*/INPUT[@type='checkbox' and contains(@class, 'ant-checkbox-input')])[10]");
-	public static By Squad_option3 = By.xpath("(//*[contains(text(), 'Teams')]/ancestor-or-self::*/descendant::*/INPUT[@type='checkbox' and contains(@class, 'ant-checkbox-input')])[9]");
+	
+	public static By Squad_option1 = By.xpath("//input[@id='6656c28b0d6d8ec42cee2765']");
+	//public static By  Squad_option2 = By.xpath("(//*[contains(text(), 'Teams')]/ancestor-or-self::*/descendant::*/INPUT[@type='checkbox' and contains(@class, 'ant-checkbox-input')])[10]");
+	public static By Squad_option3 = By.xpath("(//input[@id='6656e32cdea9c03c85908aa7']");
+	
 	public static By PickLearners = By.xpath("//button[@type='button'][text()='Pick Learners']");
 	public static By Individual_option1=By.xpath("(//INPUT[@type='checkbox'])[6]");
 	public static By Individual_option2 = By.xpath("(//INPUT[@type='checkbox'])[7]");

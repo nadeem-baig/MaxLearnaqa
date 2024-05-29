@@ -23,7 +23,7 @@ public class CertficationsPage {
 			"div:nth-child(2) > div > div > div.select__indicators > div.select__indicator.select__clear-indicator.css-tlfecz-indicatorContainer > svg");
 	public static By Cancel_submit = By.xpath("//a[@href='/data-list/challengs'][text()='Cancel']");
 	// Cert content check boxes
-	public static By checkbox1 = By.id("654064daadcc54df173f3a60");
+	public static By checkbox1 = By.id("6419c33fe40e6a1e12e3c698");
 	public static By learninglevel = By.xpath("//div[@class=' css-1wa3eu0-placeholder'][text()='Select Level']");
 	public static By PickQuestions = By.xpath("//button[@type='button'][text()='Pick Questions']");
 	public static By selectQuestion1 = By

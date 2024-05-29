@@ -18,7 +18,7 @@ import utility.Wrapper;
 
 public class Certifications extends BaseClass {
 
-	@Test(priority = 1, groups = { "Regression" })
+	@Test(priority = 1, groups = { "Regression","test" })
 	public void Add_Cert_Name_Required() throws Exception {
 		logger = extent.createTest("Cert name*", "add Cert Name required ");
 		logger.log(Status.INFO, "add new Cert Name Required");
@@ -42,7 +42,7 @@ public class Certifications extends BaseClass {
 	}
 
 	// navigate to add Cert form and click on Create cert without Description
-	@Test(priority = 2, groups = { "Regression" })
+	@Test(priority = 2, groups = { "Regression","test" })
 	public void Cert_Description_Required() throws Exception {
 		logger = extent.createTest("Cert Description*", "Cert Description required ");
 		logger.log(Status.INFO, "add new Cert Description Required");
@@ -70,7 +70,7 @@ public class Certifications extends BaseClass {
 	// navigate to add Cert form and click on Create Certfications without cert
 	// Content
 
-	@Test(priority = 3, groups = { "Regression" })
+	@Test(priority = 3, groups = { "Regression","test" })
 	public void CertContent_Required() throws Exception {
 		logger = extent.createTest("Cert content*", "Cert Content required ");
 		logger.log(Status.INFO, "add new cert Content Required");
@@ -105,7 +105,7 @@ public class Certifications extends BaseClass {
 		}
 	}
 
-	@Test(priority = 4, groups = { "Regression" })
+	@Test(priority = 4, groups = { "Regression","test" })
 	public void PassingPercentage_Required() throws Exception {
 		logger = extent.createTest("Cert PassingPercentage*", "Passing Percentage required ");
 		logger.log(Status.INFO, "add new cert Passing Percentage Required");
@@ -302,7 +302,7 @@ public class Certifications extends BaseClass {
 		}
 	}
 
-	@Test(priority = 7, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 7, groups = { "Regression", "SmokeTest","test" })
 
 	public void Create_Cert_Valid() throws InterruptedException, Exception {
 		logger = extent.createTest("Create Cert", "Create New Cert ");
@@ -548,7 +548,7 @@ public class Certifications extends BaseClass {
 	}
 
 	// Edit Certifications
-	@Test(priority = 10, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 10, groups = { "Regression", "SmokeTest","test" })
 	public void Edit_Cert() throws Exception {
 		logger = extent.createTest("Edit Cert", "Cert Edit");
 		logger.log(Status.INFO, "Edit Cert");
@@ -647,7 +647,7 @@ public class Certifications extends BaseClass {
 	}
 
 	// Delete Certifications clicking on Yes
-	@Test(priority = 12, groups = { "Regression" })
+	@Test(priority = 12, groups = { "Delete" })
 	public void Delete_Cert_Yes() throws Exception {
 		logger = extent.createTest("Delete cert yes", "Delete cert Yes");
 		logger.log(Status.INFO, "Delete Cert");
@@ -696,7 +696,7 @@ public class Certifications extends BaseClass {
 			logger.log(Status.INFO, "Delete Element is Absent for cert");
 		}
 	}
-	@Test(priority = 13, groups = { "Regression" })
+	@Test(priority = 13, groups = { "Regression","test" })
 	public void Certifications_Status() throws Exception {
 		logger = extent.createTest("Add Certifications Status Change",
 				"Changing the status");

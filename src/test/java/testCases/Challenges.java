@@ -411,10 +411,9 @@ public class Challenges extends BaseClass {
 		driver.findElement(ChallengePage.Squad_option1).click();
 		Thread.sleep(2000);
 
-		driver.findElement(ChallengePage.Squad_option2).click();
-		Thread.sleep(2000);
-		driver.findElement(ChallengePage.Delete_cancel).click();
-		Thread.sleep(2000);
+		//driver.findElement(ChallengePage.Squad_option2).click();
+		//Thread.sleep(2000);
+		
 		
 		driver.findElement(ChallengePage.ConfirmSelection).click();
 		Thread.sleep(2000);
@@ -600,7 +599,7 @@ public class Challenges extends BaseClass {
 
 		WebElement Value = driver.findElement(ChallengePage.Value);
 		Value.click();
-		Value.sendKeys("testing");
+		Value.sendKeys("IT");
 		Thread.sleep(2000);
 		System.out.println("Value is enterd");
 		
@@ -722,12 +721,12 @@ public class Challenges extends BaseClass {
 	}
 
 	// view Challenge Detail Tab
-	@Test(priority = 15, groups = { "Regression" })
+	@Test(priority = 15, groups = { "Regression","test" })
 	public void View_Detail_Tab() throws Exception {
 		logger = extent.createTest("challenge Detail Tab", "view challenge Detail Tab");
 		logger.log(Status.INFO, "view Detail");
 		driver.get(config.Challenge());
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		WebElement view_Challenge = driver.findElement(ChallengePage.View_Challenge);
 		view_Challenge.click();
 
@@ -900,7 +899,7 @@ public class Challenges extends BaseClass {
 			logger.log(Status.INFO, "Delete Element is Absent for challenge");
 		}
 	}
-	@Test(priority = 20, groups = { "Regression" })
+	@Test(priority = 20, groups = { "Regression","test"})
 	public void Challenge_Status() throws Exception {
 		logger = extent.createTest("Add Challenge Status Change",
 				"Changing the status");

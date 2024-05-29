@@ -97,7 +97,7 @@ public class Manage_Squads extends BaseClass {
 		}
 	} // navigate to add new squad and click submit without squad image
 
-	@Test(priority = 3, groups = { "Regression" })
+	@Test(priority = 3, groups = { "Regression","test" })
 	public void Add_Squad_Image_required() throws InterruptedException, Exception {
 		logger = extent.createTest("Squad Image*", "add new squad Image required ");
 		logger.log(Status.INFO, "Add new squad Image Required");
@@ -129,7 +129,7 @@ public class Manage_Squads extends BaseClass {
 
 		WebElement Value = driver.findElement(Manage_Squads_Page.Value);
 		Value.click();
-		Value.sendKeys("testing");
+		Value.sendKeys("IT");
 		Thread.sleep(2000);
 		System.out.println("Value is enterd");
 
@@ -374,7 +374,7 @@ public class Manage_Squads extends BaseClass {
 
 	// enter Required details with Valid Data
 
-	@Test(priority = 10, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 10, groups = { "Regression", "SmokeTest","test" })
 
 	public void Create_Squad_Valid() throws InterruptedException, Exception {
 		logger = extent.createTest("Create New squad ", "Add New Squad with all the required data");

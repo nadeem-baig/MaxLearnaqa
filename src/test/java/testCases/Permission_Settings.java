@@ -32,7 +32,7 @@ public class Permission_Settings extends BaseClass {
 		}	
 		
 	}
-	@Test(priority = 2,groups = { "Regression","SmokeTest" })
+	@Test(priority = 2,groups = { "Regression","SmokeTest","test" })
 	public void Admin_Permission_Settings() throws Exception {
 		logger = extent.createTest("Admin permission setting ", "verify Admin permission settings");
 		logger.log(Status.INFO, "Admin permission setting ");
@@ -71,7 +71,7 @@ public class Permission_Settings extends BaseClass {
 			logger.info(e);
 		}
 	}
-	@Test(priority = 4,groups = { "Regression","SmokeTest" })
+	@Test(priority = 4,groups = { "Regression","SmokeTest","test" })
 	public void Creator_Permission_Settings() throws Exception {
 		logger = extent.createTest("Creator permission setting ", "verify Creator permission setting");
 		logger.log(Status.INFO, "Creator permission setting");
@@ -110,7 +110,7 @@ public class Permission_Settings extends BaseClass {
 			logger.info(e);
 		}
 	}
-	@Test(priority = 6,groups = { "Regression","SmokeTest" })
+	@Test(priority = 6,groups = { "Regression","SmokeTest","test" })
 	public void Manager_Permission_Settings() throws Exception {
 		logger = extent.createTest("Manager permission settings", "verify Manager permission settings");
 		logger.log(Status.INFO, "Manager permission settings");

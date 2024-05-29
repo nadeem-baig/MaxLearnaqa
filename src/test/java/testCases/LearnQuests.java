@@ -329,7 +329,7 @@ public class LearnQuests extends BaseClass {
 	}
 
 	// Edit quest
-	@Test(priority = 8, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 8, groups = { "Regression", "SmokeTest","test" })
 	public void Edit_quest() throws Exception {
 		logger = extent.createTest("Edit quest", "quest Edit");
 		logger.log(Status.INFO, "Edit quest");
@@ -384,7 +384,7 @@ public class LearnQuests extends BaseClass {
 	}
 
 	// Delete quest clicking on cancel
-	@Test(priority = 9, groups = { "Regression" })
+	@Test(priority = 9, groups = { "Regression","test" })
 	public void Delete_quest_Cancel() throws Exception {
 		logger = extent.createTest("Delete quest No", "verify quest delete no");
 		logger.log(Status.INFO, "Delete quest Cancel");
@@ -416,7 +416,7 @@ public class LearnQuests extends BaseClass {
 	}
 	
 	// Delete quest clicking on Yes
-	@Test(priority = 10, groups = { "Regression" })
+	@Test(priority = 10, groups = { "Delete" })
 	public void Delete_quest_Yes() throws Exception {
 		logger = extent.createTest("Delete quest yes", "Delete quest Yes");
 		logger.log(Status.INFO, "Delete quest");

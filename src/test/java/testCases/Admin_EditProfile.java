@@ -71,6 +71,8 @@ public class Admin_EditProfile extends BaseClass {
 	public void Change_Password() throws Exception {
 		logger = extent.createTest("Admin Change Password", "verify Change Password");
 		logger.log(Status.INFO, "Admin Change Password");
+		Thread.sleep(5000);
+		driver.get("https://admin.maxlearn.com/profileview");
 		Thread.sleep(3000);
 		WebElement Change_Pass = driver.findElement(Admin_EditprofilePage.Change_Password);
 		Change_Pass.click();
