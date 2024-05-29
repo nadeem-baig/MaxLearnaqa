@@ -268,11 +268,12 @@ public class addNewDeck extends BaseClass {
 		driver.get(config.deck());
 		WebElement view_category = driver.findElement(DecksPage.View_Row);
 		view_category.click();
+		Thread.sleep(3000);
 
 		// capture details
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-		WebElement Add = wait.until(ExpectedConditions.elementToBeClickable(DecksPage.Add_flascard));
+		WebElement Add = driver.findElement(DecksPage.Add_flascard);
 		Add.isDisplayed();
 		String Message = Add.getText();
 		System.out.println("deck details " + Message);
@@ -286,7 +287,7 @@ public class addNewDeck extends BaseClass {
 		logger = extent.createTest("Edit Deck", "Edit Deck title");
 		logger.log(Status.INFO, "Edit Deck Title");
 		driver.get(config.deck());
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
 
 		WebElement CTA = wait.until(ExpectedConditions.elementToBeClickable(DecksPage.CTA_Button));

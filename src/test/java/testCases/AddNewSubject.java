@@ -54,7 +54,7 @@ public class AddNewSubject extends BaseClass {
 		logger.log(Status.INFO, "add new subject Icon Required");
 
 		Click_Add_New_Subject();
-
+		Thread.sleep(3000);
 		WebElement title = driver.findElement(SubjectsPage.Subject_Title);
 
 		title.sendKeys(Wrapper.AlphaNumericString(7));
@@ -101,9 +101,9 @@ public class AddNewSubject extends BaseClass {
 		
 		WebElement category = driver.findElement(SubjectsPage.Category_Dropdown);
 		category.click();
-		Actions dragger = new Actions(driver);
-		WebElement element = driver.findElement(ToasterObject.innerscroll);
-		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+//		Actions dragger = new Actions(driver);
+//		WebElement element = driver.findElement(ToasterObject.innerscroll);
+//		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
 		Thread.sleep(2000);
 		
 		driver.findElement(SubjectsPage.Subject_save).click();
@@ -145,8 +145,8 @@ public class AddNewSubject extends BaseClass {
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
 		*/
-		WebElement category = driver.findElement(SubjectsPage.Category_Dropdown);
-		category.click();
+//		WebElement category = driver.findElement(SubjectsPage.Category_Dropdown);
+//		category.click();
 		Thread.sleep(2000);
 		System.out.println("Category dropdown is clicked");
 		Actions keyDown = new Actions(driver);
@@ -232,9 +232,9 @@ public class AddNewSubject extends BaseClass {
 		Thread.sleep(2000);
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
-		Actions dragger = new Actions(driver);
-		WebElement element = driver.findElement(ToasterObject.innerscroll);
-		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+//		Actions dragger = new Actions(driver);
+//		WebElement element = driver.findElement(ToasterObject.innerscroll);
+//		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
 
 		
 		WebElement Deccription = driver.findElement(SubjectsPage.description);

@@ -337,7 +337,7 @@ public class Add_KLP extends BaseClass {
 		logger.log(Status.INFO, "KLP content - "+text);
 		System.out.println(text);
 		Thread.sleep(2000);
-		driver.findElement(KLP_Page.KLP_preview_close).click();
+		//driver.findElement(KLP_Page.KLP_preview_close).click();
 
 	}
 

@@ -349,7 +349,7 @@ public class Add_SingleChoice extends BaseClass {
 
 	// cancel Create Questions form
 
-	@Test(priority = 11, groups = { "Regression" })
+	@Test(priority = 11, groups = { "Regression","test"})
 	public void Add_Questions_Cancel() throws Exception {
 		logger = extent.createTest("Add Questions cancel ", "cancel Add Questions");
 		logger.log(Status.INFO, "Add Questions cancel");
@@ -365,7 +365,7 @@ public class Add_SingleChoice extends BaseClass {
 
 	// enter all mandatory fields
 
-	@Test(priority = 12, groups = { "Regression","SmokeTest" })
+	@Test(priority = 12, groups = { "Regression","SmokeTest","test" })
 	public void Add_Questions_Valid() throws Exception {
 		logger = extent.createTest("Add question valid", "Add Questions Mandatory field ");
 		logger.log(Status.INFO, "Add Question");
@@ -583,7 +583,7 @@ public class Add_SingleChoice extends BaseClass {
 	}
 
 	// Delete Question clicking on cancel
-	@Test(priority = 16, groups = { "Regression" })
+	@Test(priority = 16, groups = { "Regression","test"})
 	public void Delete_Question_Cancel() throws Exception {
 		logger = extent.createTest("Delete Question", "Delete Question Cancel");
 		logger.log(Status.INFO, "Delete question");

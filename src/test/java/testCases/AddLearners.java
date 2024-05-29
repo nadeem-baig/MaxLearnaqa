@@ -475,7 +475,7 @@ public class AddLearners extends BaseClass {
 	}
  
 	// Edit learner
-	@Test(priority = 13, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 13, groups = { "Regression", "SmokeTest"})
 	public void Edit_Learner() throws Exception {
 		logger = extent.createTest("Edit Learner", "Edit learner");
  

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="reportname" value="Admin_Regression"/>
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="testCases.LearnQuests">
+        <methods>
+          <include name="Search_quest"/>
+          <include name="LearningPath_Status"/>
+          <include name="Content_Required"/>
+          <include name="createQuest"/>
+          <include name="Edit_quest"/>
+          <include name="setUpSuite"/>
+          <include name="Description_Required"/>
+          <include name="Quest_Valid"/>
+          <include name="View_quest"/>
+          <include name="Name_Required"/>
+          <include name="Delete_quest_Yes"/>
+          <include name="Delete_quest_Cancel"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- testCases.LearnQuests -->
+      <class name="testCases.AddNewSubject">
+        <methods>
+          <include name="add_new_Subject_Valid"/>
+          <include name="Add_subject_description_Required"/>
+          <include name="cancel"/>
+          <include name="Delete_Subject_Cancel"/>
+          <include name="View_Subject"/>
+          <include name="add_new_Subject_Status"/>
+          <include name="setUpSuite"/>
+          <include name="Add_Subject_Icon_Required"/>
+          <include name="Edit_Subject"/>
+          <include name="Add_subject_category_dropdown_Required"/>
+          <include name="Search_Subjects"/>
+          <include name="Add_Subject_Title_Required"/>
+          <include name="getResult"/>
+          <include name="add_new_Subject_Description_count"/>
+        </methods>
+      </class> <!-- testCases.AddNewSubject -->
+      <class name="testCases.AddNewCategory">
+        <methods>
+          <include name="Add_Category_Icon_Required"/>
+          <include name="add_new_Category_Status"/>
+          <include name="Add_Category_CardColor_Required"/>
+          <include name="add_new_Category_Valid"/>
+          <include name="Search_Category"/>
+          <include name="Add_Category_Title_Required"/>
+          <include name="View_category"/>
+          <include name="cancel"/>
+          <include name="setUpSuite"/>
+          <include name="Edit_Category"/>
+          <include name="Add_Category_description_Required"/>
+          <include name="add_new_Category_Description_count"/>
+          <include name="getResult"/>
+          <include name="Delete_category_Cancel"/>
+        </methods>
+      </class> <!-- testCases.AddNewCategory -->
+      <class name="testCases.addNewDeck">
+        <methods>
+          <include name="Search_Deck"/>
+          <include name="Delete_Deck_Cancel"/>
+          <include name="Add_Deck_Topic_required"/>
+          <include name="AddDeck_Title_required"/>
+          <include name="setUpSuite"/>
+          <include name="Add_Deck_Cancel"/>
+          <include name="Edit_Deck"/>
+          <include name="add_new_Deck_Status"/>
+          <include name="View_Deck"/>
+          <include name="AddDeck_category_required"/>
+          <include name="Add_New_Deck_Valid"/>
+          <include name="Add_Deck_subject_required"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- testCases.addNewDeck -->
+      <class name="testCases.AddLearners">
+        <methods>
+          <include name="Add_New_Learner"/>
+          <include name="Learner_State_Required"/>
+          <include name="Verify_Add_New_Learner_isDisplayed"/>
+          <include name="Learner_EmpID_Required"/>
+          <include name="View_Learner"/>
+          <include name="Learner_Status"/>
+          <include name="setUpSuite"/>
+          <include name="Learner_Country_Required"/>
+          <include name="Learner_Email_Required"/>
+          <include name="Search_Learner"/>
+          <include name="Learner_HireDate_Required"/>
+          <include name="Learner_Designation_Required"/>
+          <include name="Add_New_Learner_Name_Required"/>
+          <include name="Edit_Learner"/>
+          <include name="getResult"/>
+          <include name="Delete_Learner_Cancel"/>
+          <include name="Learner_Department_Required"/>
+        </methods>
+      </class> <!-- testCases.AddLearners -->
+      <class name="testCases.Challenges">
+        <methods>
+          <include name="Challenge_Status"/>
+          <include name="View_Participants_Tab"/>
+          <include name="Create_Challenge_Valid"/>
+          <include name="View_Notification_Tab"/>
+          <include name="setUpSuite"/>
+          <include name="View_Challenge"/>
+          <include name="cancel"/>
+          <include name="View_Detail_Tab"/>
+          <include name="Description_counter"/>
+          <include name="Search_Challenge"/>
+          <include name="getResult"/>
+          <include name="Edit_Challenge"/>
+          <include name="invalid_Squad"/>
+          <include name="Delete_Challenge_Cancel"/>
+          <include name="Select_Squad"/>
+        </methods>
+      </class> <!-- testCases.Challenges -->
+      <class name="testCases.addNewTopic">
+        <methods>
+          <include name="Add_Topic_subject_dropdown_Required"/>
+          <include name="Add_topic_category_dropdown_Required"/>
+          <include name="Add_Topic_Title_Required"/>
+          <include name="Edit_Topic"/>
+          <include name="Add_topic_description_Required"/>
+          <include name="View_Topic"/>
+          <include name="add_new_Topic_Status"/>
+          <include name="Delete_Topic_Cancel"/>
+          <include name="Add_New_Topic_Valid"/>
+          <include name="getResult"/>
+          <include name="Search_Topic"/>
+          <include name="setUpSuite"/>
+        </methods>
+      </class> <!-- testCases.addNewTopic -->
+      <class name="testCases.Add_KLP">
+        <methods>
+          <include name="Create_KLP_Cancel"/>
+          <include name="View_KLP"/>
+          <include name="Create_KLP_subject_required"/>
+          <include name="Create_KLP_Topic_required"/>
+          <include name="setUpSuite"/>
+          <include name="Edit_KLP"/>
+          <include name="Create_KLP_description_Required"/>
+          <include name="Search_KLP"/>
+          <include name="Add_New_KLP_Description_count"/>
+          <include name="Create_KLP_category_required"/>
+          <include name="Delete_KLP_Cancel"/>
+          <include name="getResult"/>
+          <include name="Create_KLP_Valid"/>
+          <include name="Add_KLP_Title_required"/>
+        </methods>
+      </class> <!-- testCases.Add_KLP -->
+      <class name="testCases.AddNewFlashCard">
+        <methods>
+          <include name="cancel"/>
+          <include name="add_new_Flashcard_Status"/>
+          <include name="Add_flashcard_description_Required"/>
+          <include name="Edit_Flashcard"/>
+          <include name="Add_Flashcard_valid"/>
+          <include name="add_new_flashcard_Description_count"/>
+          <include name="Delete_Flashcard_Cancel"/>
+          <include name="setUpSuite"/>
+          <include name="Add_Flascard_Title_required"/>
+          <include name="view_Flashcard"/>
+          <include name="Deck_Detailpage"/>
+          <include name="Search_Flashcard"/>
+          <include name="getResult"/>
+          <include name="Add_flashcard_Icon_Required"/>
+        </methods>
+      </class> <!-- testCases.AddNewFlashCard -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
