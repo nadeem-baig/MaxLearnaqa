@@ -112,6 +112,11 @@ public class addNewTopic extends BaseClass {
 		Actions keyDown = new Actions(driver);
 		keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
 		System.out.println("subject selected");
+		
+		Thread.sleep(3000);
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
 
 		driver.findElement(TopicsPage.Topic_publish).click();
 		Thread.sleep(2000);

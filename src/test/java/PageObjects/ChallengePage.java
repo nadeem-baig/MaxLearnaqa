@@ -39,7 +39,7 @@ public class ChallengePage
 	public static By Individual_option1=By.xpath("(//INPUT[@type='checkbox'])[6]");
 	public static By Individual_option2 = By.xpath("(//INPUT[@type='checkbox'])[7]");
 	public static By ConfirmSelection = By.xpath("//button[@type='button'][text()='Confirm Selection']");
-	public static By CreateChallenge_submit = By.xpath("//button[@type='submit'][text()='Create Challenge']");
+	public static By CreateChallenge_submit = By.xpath("//button[@type='submit']");
 	public static By Cancel_Squad = By.xpath("//button[@type='button'][text()='Cancel']");
 	public static By Cancel_submit = By.xpath("//a[@href='/data-list/challenges'][text()='Cancel']");
 	public static By squad_count = By.xpath("//div//div[text()='ASSIGNED TEAMS']");

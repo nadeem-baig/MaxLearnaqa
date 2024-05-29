@@ -89,7 +89,9 @@ public class MyProfileTest extends BaseClassWebApp {
 	public static void Edit_User_BioRequired() throws InterruptedException {
 		logger = extent.createTest("Edit User Bio", "Edit User My Bio required");
 		logger.log(Status.INFO, "In Edit User My Bio required");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
+		Wrapper.ScrollToTop(driver);
+		Thread.sleep(2000);
 		WebElement basic_info = driver.findElement(MyProfileObjects.Basic_info_tab);
 		basic_info.click();
 		Thread.sleep(2000);

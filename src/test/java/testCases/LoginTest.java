@@ -17,7 +17,7 @@ import PageObjects.ToasterObject;
 
 public class LoginTest extends BaseClass {
 
-	@Test(priority = 0, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 0, groups = { "Regression", "SmokeTest","test" })
 	public static void login_Workspace_Id() throws InterruptedException {
 		logger = extent.createTest("verify valid WorkSpaceId", "Workspace Id");
 		Thread.sleep(2000);
@@ -129,7 +129,7 @@ public class LoginTest extends BaseClass {
 		}
 	}
 
-	@Test(priority = 4, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 4, groups = { "Regression", "SmokeTest","test" })
 	public static void login_valid() throws InterruptedException {
 		logger = extent.createTest("Login Success", "verify login valid case");
 

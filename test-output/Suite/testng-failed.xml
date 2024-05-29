@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="reportname" value="WebSmokeTest"/>
+  <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="webAppTest.MyProfileTest">
+        <methods>
+          <include name="setUpSuite"/>
+          <include name="Edit_User_BioRequired"/>
+          <include name="Edit_User_Details"/>
+          <include name="Analytics_Tab"/>
+          <include name="Edit_User_vaildNumber"/>
+          <include name="cancel"/>
+          <include name="beforMethod"/>
+        </methods>
+      </class> <!-- webAppTest.MyProfileTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

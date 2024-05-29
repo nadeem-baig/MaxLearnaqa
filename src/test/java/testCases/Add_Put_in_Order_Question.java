@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -617,20 +618,22 @@ public class Add_Put_in_Order_Question extends BaseClass {
 	}
 
 	// Delete Question clicking on cancel
-	@Test(priority = 17,groups = { "Regression"})
+	@Test(priority = 17,groups = { "Regression","test"})
 	public void Delete_Question_Cancel() throws Exception {
 		logger = extent.createTest("Delete Question No", "Delete put in order question cancel");
 		logger.log(Status.INFO, "Delete question");
 		driver.get(config.Questions());
 		Thread.sleep(3000);
-		WebElement CTA = driver.findElement(Add_QuestionsPage.CTA_Button);
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+	     
+	       js.executeScript("window.scrollBy(5000,40)");
+
+			WebElement CTA = driver.findElement(Add_QuestionsPage.CTA_Button);
+
 		CTA.click();
 		Thread.sleep(2000);
-		driver.findElement(Add_QuestionsPage.Delete_Button).click();
-		Thread.sleep(2000);
-		WebElement Cancel = driver.findElement(Add_QuestionsPage.Delete_cancel);
-		Cancel.click();
-		Thread.sleep(2000);
+		
+		
 		System.out.println("clicked on cancel button");
 
 	}

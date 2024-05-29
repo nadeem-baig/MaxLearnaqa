@@ -182,8 +182,14 @@ public class AddLearners extends BaseClass {
 		WebElement hiredate = driver.findElement(LearnersPage.Learner_HireDate);
 		hiredate.click();
 		//hiredate.sendKeys(Keys.chord(Keys.TAB, Keys.TAB));
-		driver.findElement(LearnersPage.today).click();
+		WebElement date = driver.findElement(LearnersPage.today);
+		date.click();
 		Thread.sleep(2000);
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+		Thread.sleep(3000);
+
 		// emp id required
 		WebElement department = driver.findElement(LearnersPage.Learner_Department);
 		department.click();
@@ -285,6 +291,10 @@ public class AddLearners extends BaseClass {
 		keyDown.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER, Keys.TAB)).perform();
 		System.out.println("designation selected");
 		Thread.sleep(2000);
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+
  
 		WebElement state = driver.findElement(LearnersPage.Learner_State);
 		state.click();
@@ -335,6 +345,11 @@ public class AddLearners extends BaseClass {
 		hiredate.click();
 		//hiredate.sendKeys(excel.getDataSheetName("Learners_Squads", 8, 1), Keys.TAB, Keys.TAB);
 		 driver.findElement(LearnersPage.today).click();
+		 Thread.sleep(2000);
+		 Actions dragger = new Actions(driver);
+			WebElement element = driver.findElement(ToasterObject.innerscroll);
+			dragger.moveToElement(element).clickAndHold().moveByOffset(0, 200).release(element).build().perform();
+
  
 		// department
 		WebElement Department = driver.findElement(LearnersPage.Learner_Department);
@@ -342,10 +357,7 @@ public class AddLearners extends BaseClass {
 		Actions keyDown = new Actions(driver);
 		keyDown.sendKeys(excel.getDataSheetName("Learners_Squads", 9, 1), Keys.chord(Keys.ENTER, Keys.TAB)).perform();
 		System.out.println("Department selected");
-		Actions dragger = new Actions(driver);
-		WebElement element = driver.findElement(ToasterObject.innerscroll);
-		dragger.moveToElement(element).clickAndHold().moveByOffset(0, 100).release(element).build().perform();
-		Thread.sleep(2000);
+		
  
 		// designation
 		WebElement Learner_Designation = wait
@@ -355,7 +367,10 @@ public class AddLearners extends BaseClass {
 		keyDown.sendKeys(excel.getDataSheetName("Learners_Squads", 10, 1), Keys.chord(Keys.ENTER, Keys.TAB)).perform();
 		System.out.println("designation selected");
 		Thread.sleep(2000);
- 
+		Actions dragger1 = new Actions(driver);
+		WebElement element1 = driver.findElement(ToasterObject.innerscroll);
+		dragger1.moveToElement(element1).clickAndHold().moveByOffset(0, 100).release(element1).build().perform();
+		Thread.sleep(2000);
 		// country
 		WebElement country = wait.until(ExpectedConditions.visibilityOfElementLocated(LearnersPage.Learner_Country));
  

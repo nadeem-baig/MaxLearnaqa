@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="16" passed="15" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-29T18:05:54 IST" name="Suite" finished-at="2024-05-29T18:09:03 IST" duration-ms="188872">
+    <groups>
+      <group name="SmokeTest">
+        <method signature="AppLoginTest.login_Workspace_Id()[pri:0, instance:webAppTest.AppLoginTest@60099951]" name="login_Workspace_Id" class="webAppTest.AppLoginTest"/>
+        <method signature="AppLoginTest.login_valid_email_password()[pri:5, instance:webAppTest.AppLoginTest@60099951]" name="login_valid_email_password" class="webAppTest.AppLoginTest"/>
+        <method signature="MyProfileTest.Edit_User_Details()[pri:5, instance:webAppTest.MyProfileTest@26d9b808]" name="Edit_User_Details" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Edit_profile_icon()[pri:1, instance:webAppTest.MyProfileTest@26d9b808]" name="Edit_profile_icon" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Squad_Details()[pri:7, instance:webAppTest.MyProfileTest@26d9b808]" name="Squad_Details" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Transcripts()[pri:8, instance:webAppTest.MyProfileTest@26d9b808]" name="Transcripts" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.profile_Navigation()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" name="profile_Navigation" class="webAppTest.MyProfileTest"/>
+      </group> <!-- SmokeTest -->
+      <group name="Regression">
+        <method signature="AppLoginTest.login_Workspace_Id()[pri:0, instance:webAppTest.AppLoginTest@60099951]" name="login_Workspace_Id" class="webAppTest.AppLoginTest"/>
+        <method signature="AppLoginTest.login_empty_email()[pri:1, instance:webAppTest.AppLoginTest@60099951]" name="login_empty_email" class="webAppTest.AppLoginTest"/>
+        <method signature="AppLoginTest.login_empty_password()[pri:3, instance:webAppTest.AppLoginTest@60099951]" name="login_empty_password" class="webAppTest.AppLoginTest"/>
+        <method signature="AppLoginTest.login_invalid_email()[pri:2, instance:webAppTest.AppLoginTest@60099951]" name="login_invalid_email" class="webAppTest.AppLoginTest"/>
+        <method signature="AppLoginTest.login_invalid_email_password()[pri:4, instance:webAppTest.AppLoginTest@60099951]" name="login_invalid_email_password" class="webAppTest.AppLoginTest"/>
+        <method signature="AppLoginTest.login_valid_email_password()[pri:5, instance:webAppTest.AppLoginTest@60099951]" name="login_valid_email_password" class="webAppTest.AppLoginTest"/>
+        <method signature="MyProfileTest.Analytics_Tab()[pri:6, instance:webAppTest.MyProfileTest@26d9b808]" name="Analytics_Tab" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Edit_User_BioRequired()[pri:2, instance:webAppTest.MyProfileTest@26d9b808]" name="Edit_User_BioRequired" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Edit_User_Details()[pri:5, instance:webAppTest.MyProfileTest@26d9b808]" name="Edit_User_Details" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Edit_User_vaildNumber()[pri:3, instance:webAppTest.MyProfileTest@26d9b808]" name="Edit_User_vaildNumber" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Edit_profile_icon()[pri:1, instance:webAppTest.MyProfileTest@26d9b808]" name="Edit_profile_icon" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Squad_Details()[pri:7, instance:webAppTest.MyProfileTest@26d9b808]" name="Squad_Details" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.Transcripts()[pri:8, instance:webAppTest.MyProfileTest@26d9b808]" name="Transcripts" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.cancel()[pri:4, instance:webAppTest.MyProfileTest@26d9b808]" name="cancel" class="webAppTest.MyProfileTest"/>
+        <method signature="MyProfileTest.profile_Navigation()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" name="profile_Navigation" class="webAppTest.MyProfileTest"/>
+      </group> <!-- Regression -->
+    </groups>
+    <test started-at="2024-05-29T18:05:54 IST" name="Test" finished-at="2024-05-29T18:09:03 IST" duration-ms="188872">
+      <class name="webAppTest.AppLoginTest">
+        <test-method is-config="true" signature="setUpSuite(java.lang.String)[pri:0, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:05:44 IST" name="setUpSuite" finished-at="2024-05-29T18:05:54 IST" duration-ms="9932" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[WebSmokeTest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpSuite -->
+        <test-method signature="login_Workspace_Id()[pri:0, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:05:54 IST" name="login_Workspace_Id" finished-at="2024-05-29T18:06:04 IST" duration-ms="9697" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_Workspace_Id -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:05:54 IST" name="beforMethod" finished-at="2024-05-29T18:05:54 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:04 IST" name="beforMethod" finished-at="2024-05-29T18:06:04 IST" duration-ms="235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="login_empty_email()[pri:1, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:04 IST" name="login_empty_email" finished-at="2024-05-29T18:06:10 IST" duration-ms="6345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_empty_email -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:10 IST" name="beforMethod" finished-at="2024-05-29T18:06:10 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="login_invalid_email()[pri:2, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:10 IST" name="login_invalid_email" finished-at="2024-05-29T18:06:18 IST" duration-ms="7364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_invalid_email -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:18 IST" name="beforMethod" finished-at="2024-05-29T18:06:18 IST" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="login_empty_password()[pri:3, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:18 IST" name="login_empty_password" finished-at="2024-05-29T18:06:24 IST" duration-ms="5918" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_empty_password -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:24 IST" name="beforMethod" finished-at="2024-05-29T18:06:24 IST" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="login_invalid_email_password()[pri:4, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:24 IST" name="login_invalid_email_password" finished-at="2024-05-29T18:06:31 IST" duration-ms="7441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_invalid_email_password -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:31 IST" name="beforMethod" finished-at="2024-05-29T18:06:31 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="login_valid_email_password()[pri:5, instance:webAppTest.AppLoginTest@60099951]" started-at="2024-05-29T18:06:31 IST" name="login_valid_email_password" finished-at="2024-05-29T18:06:57 IST" duration-ms="25926" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_valid_email_password -->
+      </class> <!-- webAppTest.AppLoginTest -->
+      <class name="webAppTest.MyProfileTest">
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:06:57 IST" name="beforMethod" finished-at="2024-05-29T18:06:57 IST" duration-ms="16" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="profile_Navigation()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:06:57 IST" name="profile_Navigation" finished-at="2024-05-29T18:07:03 IST" duration-ms="6229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- profile_Navigation -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:07:03 IST" name="beforMethod" finished-at="2024-05-29T18:07:03 IST" duration-ms="16" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="Edit_profile_icon()[pri:1, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:07:03 IST" name="Edit_profile_icon" finished-at="2024-05-29T18:07:05 IST" duration-ms="1208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Edit_profile_icon -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:07:05 IST" name="beforMethod" finished-at="2024-05-29T18:07:05 IST" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="Edit_User_BioRequired()[pri:2, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:07:05 IST" name="Edit_User_BioRequired" finished-at="2024-05-29T18:07:35 IST" duration-ms="30417" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Edit_User_BioRequired -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:07:35 IST" name="beforMethod" finished-at="2024-05-29T18:07:35 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="Edit_User_vaildNumber()[pri:3, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:07:35 IST" name="Edit_User_vaildNumber" finished-at="2024-05-29T18:08:00 IST" duration-ms="25314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Edit_User_vaildNumber -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:00 IST" name="beforMethod" finished-at="2024-05-29T18:08:00 IST" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="cancel()[pri:4, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:00 IST" name="cancel" finished-at="2024-05-29T18:08:04 IST" duration-ms="3105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancel -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:04 IST" name="beforMethod" finished-at="2024-05-29T18:08:04 IST" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="Edit_User_Details()[pri:5, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:04 IST" name="Edit_User_Details" finished-at="2024-05-29T18:08:11 IST" duration-ms="7662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Edit_User_Details -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:11 IST" name="beforMethod" finished-at="2024-05-29T18:08:11 IST" duration-ms="16" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="Analytics_Tab()[pri:6, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:11 IST" name="Analytics_Tab" finished-at="2024-05-29T18:08:19 IST" duration-ms="8138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Analytics_Tab -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:19 IST" name="beforMethod" finished-at="2024-05-29T18:08:19 IST" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="Squad_Details()[pri:7, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:19 IST" name="Squad_Details" finished-at="2024-05-29T18:08:54 IST" duration-ms="35035" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Squad_Details -->
+        <test-method is-config="true" signature="beforMethod()[pri:0, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:54 IST" name="beforMethod" finished-at="2024-05-29T18:08:55 IST" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforMethod -->
+        <test-method signature="Transcripts()[pri:8, instance:webAppTest.MyProfileTest@26d9b808]" started-at="2024-05-29T18:08:55 IST" name="Transcripts" finished-at="2024-05-29T18:09:03 IST" duration-ms="8461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Transcripts -->
+      </class> <!-- webAppTest.MyProfileTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

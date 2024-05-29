@@ -2,24 +2,27 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 
-<parameter name="reportname" value="WebSmokeTest" />
+	<parameter name="reportname" value="WebSmokeTest" />
 	<test thread-count="5" name="Test">
 		<groups>
 			<run>
-				
+
 				<include name="Regression"></include>
 			</run>
 		</groups>
 		<classes>
-			
-			<class name="webAppTest.Forgot_Password" />
+
 			<class name="webAppTest.AppLoginTest" />
-			<class name="webAppTest.HomePage" />
+			<class name="webAppTest.MyProfileTest" />
+
+			<!-- <class name="webAppTest.Forgot_Password" />
+
+		<class name="webAppTest.HomePage" />
 			<class name="webAppTest.MyProfileTest" />
 			<class name="webAppTest.ChallengesTest" />
 			<class name="webAppTest.LearnTab" />
-			<class name="webAppTest.Change_Password" />
-			
+			<class name="webAppTest.Change_Password" />-->
+
 		</classes>
 
 

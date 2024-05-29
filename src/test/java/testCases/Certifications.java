@@ -546,7 +546,7 @@ public class Certifications extends BaseClass {
 	}
 
 	// Edit Certifications
-	@Test(priority = 10, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 10, groups = { "Regression", "SmokeTest","test" })
 	public void Edit_Cert() throws Exception {
 		logger = extent.createTest("Edit Cert", "Cert Edit");
 		logger.log(Status.INFO, "Edit Cert");
@@ -692,7 +692,7 @@ public class Certifications extends BaseClass {
 			logger.log(Status.INFO, "Delete Element is Absent for cert");
 		}
 	}
-	@Test(priority = 13, groups = { "Regression" })
+	@Test(priority = 13, groups = { "Regression","test" })
 	public void Certifications_Status() throws Exception {
 		logger = extent.createTest("Add Certifications Status Change",
 				"Changing the status");

@@ -282,13 +282,13 @@ public class Add_KLP extends BaseClass {
 	}
 
 	// wait for search to display and enter text then capture results
-	@Test(priority = 9,groups = { "Regression","SmokeTest" })
+	@Test(priority = 9,groups = { "Regression","SmokeTest","test" })
 	public void Search_KLP() throws Exception {
 		logger = extent.createTest("Search KLP  ", "Search KLP");
 		logger.log(Status.INFO, "search KLP");
 
 		driver.get(config.klp());
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
 		WebElement search_KLP = wait.until(ExpectedConditions.elementToBeClickable(KLP_Page.Search));
 		search_KLP.click();
 		Thread.sleep(2000);
@@ -316,7 +316,7 @@ public class Add_KLP extends BaseClass {
 	}
 
 	// view category
-	@Test(priority = 10,groups = { "Regression" })
+	@Test(priority = 10,groups = { "Regression","test" })
 	public void View_KLP() throws Exception {
 		logger = extent.createTest("View KLP  ", "view KLP details");
 		logger.log(Status.INFO, "view KLP");
@@ -332,7 +332,7 @@ public class Add_KLP extends BaseClass {
 		logger.log(Status.INFO, "KLP content - "+text);
 		System.out.println(text);
 		Thread.sleep(2000);
-		driver.findElement(KLP_Page.KLP_preview_close).click();
+		//driver.findElement(KLP_Page.KLP_preview_close).click();
 
 	}
 

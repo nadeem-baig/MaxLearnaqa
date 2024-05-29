@@ -27,7 +27,7 @@ public class AddNewFlashCard extends BaseClass {
 
 	// navigate to Deck listing form and click on any deck
 
-	@Test(priority = 0, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 0, groups = { "Regression", "SmokeTest","test" })
 	public void Deck_Detailpage() throws InterruptedException {
 		Thread.sleep(2000);
 		driver.get(config.deck());
@@ -159,7 +159,12 @@ public class AddNewFlashCard extends BaseClass {
 		logger = extent.createTest("Flashcard counter", "add new Flashcard description counter");
 		logger.log(Status.INFO, "add new Flashcard description counter");
 		Click_Add_New_Flashcard();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0,-100).release(element).build().perform();
+		Thread.sleep(3000);
 		driver.findElement(FlashcardPage.addTitle).click();
 		Thread.sleep(2000);
 		driver.findElement(FlashcardPage.addTitle).sendKeys(Wrapper.AlphaNumericString(7));
@@ -179,7 +184,13 @@ public class AddNewFlashCard extends BaseClass {
 		WebElement Description = driver.findElement(FlashcardPage.description);
 		Description.click();
 		Description.sendKeys("Testing");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+		
+		Actions dragger1 = new Actions(driver);
+		WebElement element1 = driver.findElement(ToasterObject.innerscroll);
+		dragger1.moveToElement(element1).clickAndHold().moveByOffset(0, 200).release(element1).build().perform();
+
+		
 		System.out.println(chars.getText());
 		logger.log(Status.INFO, "After " + chars.getText());
 		Thread.sleep(2000);
@@ -189,11 +200,19 @@ public class AddNewFlashCard extends BaseClass {
 
 	}
 
-	@Test(priority = 6, groups = { "Regression", "SmokeTest" })
+	@Test(priority = 6, groups = { "Regression", "SmokeTest","test" })
 	public void Add_Flashcard_valid() throws InterruptedException, Exception {
 		logger = extent.createTest("add flashcard success", "Add Flashcard successfully");
 		logger.log(Status.INFO, "add new flashcard");
+		Thread.sleep(5000);
 		Click_Add_New_Flashcard();
+		Thread.sleep(3000);
+		
+
+		Actions dragger = new Actions(driver);
+		WebElement element = driver.findElement(ToasterObject.innerscroll);
+		dragger.moveToElement(element).clickAndHold().moveByOffset(0,-100).release(element).build().perform();
+		Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		
 		Thread.sleep(2000);
@@ -440,6 +459,8 @@ public class AddNewFlashCard extends BaseClass {
 
 		WebElement Add = wait.until(ExpectedConditions.elementToBeClickable(FlashcardPage.Add_New_Flashcard));
 		Add.click();
+		
+
 
 	}
 }

@@ -31,7 +31,7 @@ public class Challenges extends BaseClass {
 
 		Click_Add_New_Challenge();
 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.findElement(ChallengePage.CreateChallenge_submit).click();
 		Thread.sleep(1000);
 		try {
@@ -890,7 +890,7 @@ public class Challenges extends BaseClass {
 			logger.log(Status.INFO, "Delete Element is Absent for challenge");
 		}
 	}
-	@Test(priority = 20, groups = { "Regression" })
+	@Test(priority = 20, groups = { "Regression","test" })
 	public void Challenge_Status() throws Exception {
 		logger = extent.createTest("Add Challenge Status Change",
 				"Changing the status");
